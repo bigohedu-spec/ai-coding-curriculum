@@ -1,0 +1,31 @@
+# === 作業系統 / OneDrive ===
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# === Office / 編輯器暫存鎖檔 ===
+~$*
+*.tmp
+*.swp
+*.bak
+
+# === Obsidian（分享核心設定，但忽略「個人化 / 易變」的部分）===
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/hotkeys.json
+.trash/
+
+# === Python（skills/ 內腳本用）===
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# === Claude / 本地暫存輸出（不入庫）===
+outputs/
+**/outputs/
+*.local.md
+
+# === 大型二進位改用 Git LFS 追蹤（見 .gitattributes），此處不忽略 ===

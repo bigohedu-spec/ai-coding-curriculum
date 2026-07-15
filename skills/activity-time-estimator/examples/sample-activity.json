@@ -1,0 +1,19 @@
+{
+  "grade": 3,
+  "target_min": [50, 65],
+  "activities": [
+    { "label": "讀今天的冒險(Hook)", "action": "read", "chars": 15 },
+    { "label": "回顧上週:拖拉配對 5 對", "action": "drag", "count": 5 },
+    { "label": "讀任務A說明", "action": "read", "chars": 18 },
+    { "label": "任務A:萃取關鍵詞拖拉 4 個", "action": "drag", "count": 4 },
+    { "label": "任務A Rehearsal:選擇題", "action": "select", "option_chars": 30, "count": 1 },
+    { "label": "讀任務B說明", "action": "read", "chars": 16 },
+    { "label": "任務B:打字描述功能", "action": "type", "chars": 25 },
+    { "label": "任務B:思考邊界情況", "action": "think", "count": 1 },
+    { "label": "任務B:點擊送出與調整", "action": "click", "count": 6 },
+    { "label": "總結句子接龍", "action": "select", "option_chars": 40, "count": 1 },
+    { "label": "技能牆點擊解鎖 3 塊", "action": "click", "count": 3 },
+    { "label": "截圖", "action": "screenshot", "count": 1 },
+    { "label": "舉手告知老師", "action": "tell_teacher", "count": 1 }
+  ]
+}
