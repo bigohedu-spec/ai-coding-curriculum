@@ -14,8 +14,10 @@
 | 工具 | 功能 | 首次出現 | 說明 |
 |------|------|---------|------|
 | **Lab Terminal** | 文字 AI 對話 + 任務平台 + 小遊戲 + 點數商店 | P1下（W13）/ S1（W1） | 課程最核心的自建系統；與 Minecraft 共用金幣經濟體；詳見 [[lab-terminal]] |
+| **Lab Terminal（文字類）** | 輕量文字處理工具 | S3（W1） | 在 Lab Terminal 內處理整理、改寫、提示等文字任務；S3-W01 學生端名稱使用 Lab Terminal |
 | **Lab Image** | AI 圖像生成 | P1下（W19）/ S1（W11） | 取代 Canva AI、Adobe Firefly；文字→圖片，支援風格設定 |
 | **Lab Video** | AI 影片生成 | S3（W2） | 取代 Runway、Pika；圖片轉動畫、短影片生成 |
+| **Lab Music** | AI 音樂生成 | S3（W1 試用 / W3 正式） | 學生端音樂工具；底層由後端串 ElevenLabs Music API，學生不需帳號 |
 
 ---
 
@@ -27,7 +29,6 @@
 | **VS Code** | 程式編輯器 | S3（W18） | 本地端，無需帳號 |
 | **GitHub / GitHub Pages** | 版本控制 + 部署 | S5（W3）/ S6（W16） | 已納入課程，帳號由課程統一管理 |
 | **GitHub Copilot** | 程式 AI | S5（W7） | 隨 GitHub 帳號配套，VS Code 內程式輔助 |
-| **Suno** | 音樂 AI | S3（W3） | 文字生成背景音樂，已明確保留 |
 | **Canva**（非 AI 功能） | 設計排版 | P1上（W19）/ S1（W15） | 拖放排版工具，非 AI 系統，帳號可選 |
 
 ---
@@ -44,6 +45,7 @@ S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務�
 |------|------|
 | 2026-04-23 | 初始建立，依課綱 docx 整理 |
 | 2026-04-28 | 全面替換第三方 AI 工具：Canva AI → Lab Image；Adobe Firefly → Lab Image；Runway → Lab Video；Pika → Lab Video；新增工具政策說明（CLAUDE.md 第十四節） |
+| 2026-07-20 | S3 音樂工具改為 Lab Music；學生端不顯示 ElevenLabs，工程端由後端串 ElevenLabs Music API；S3-W01 文字類工具學生端名稱改為 Lab Terminal |
 
 ---
 
@@ -55,4 +57,4 @@ S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務�
 
 ---
 
-> 最後修改：2026-04-28，原因：全面替換第三方 AI 工具為 Lab 系列自建工具；新增工具政策；更新工具清單結構
+> 最後修改：2026-07-20，原因：S3-W01 文字類工具學生端名稱改為 Lab Terminal；S3 音樂工具改為學生端 Lab Music，底層由後端串 ElevenLabs Music API

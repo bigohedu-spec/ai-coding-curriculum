@@ -27,7 +27,7 @@
 
 ## 概念連結
 
-- 新工具引入：Lab Video（影片）、Suno（音樂）— 詳見 [[ai-tools]]
+- 新工具引入：Lab Video（影片）、Lab Music（音樂；底層 ElevenLabs Music API）— 詳見 [[ai-tools]]
 - 邏輯思維初步：條件、序列 — 詳見 [[learning-progression]]
 - VS Code 首次登場：[[learning-progression]]
 
@@ -52,7 +52,7 @@
 |---------|------|------|------|------|
 | S3-W01-A | 工具地圖探索 | EX | 250 | Lab Terminal |
 | S3-W02-A | AI 影片初體驗 | EX | 40 | Lab Video |
-| S3-W03-A | AI 音樂創作 | EX | 35 | Suno |
+| S3-W03-A | AI 音樂創作 | EX | 35 | Lab Music |
 | S3-W04-A | 工具試用大亂鬥 | EX | 50 | 多工具 |
 | S3-W05-A | 我的主力工具宣言 | EX | 25 | AI 對話介面 |
 
@@ -61,7 +61,7 @@
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
 | S3-W06-A | 工具串聯挑戰 | EX | 45 | Lab Terminal + Lab Image |
-| S3-W07-A | 故事配樂任務 | EX | 45 | Lab Terminal + Suno |
+| S3-W07-A | 故事配樂任務 | EX | 45 | Lab Terminal + Lab Music |
 | S3-W08-A | 插圖動起來 | EX | 50 | Lab Video |
 | S3-W09-A | 多媒體故事整合 | EX | 70 | Canva |
 | S3-W10-A | 同學作品互評 | EX | 30 | 直接觀看 + Lab Terminal |
@@ -97,4 +97,4 @@
 
 ---
 
-> 最後修改：2026-07-17，原因：依需求完全移除 S3-W01 的 MC / Minecraft 主線定位，改為 EX / Lab Terminal 虛擬工具地圖；保留主線 250 金幣
+> 最後修改：2026-07-20，原因：S3 音樂工具改為學生端 Lab Music（底層 ElevenLabs Music API）；同步 W03 / W07 工具欄位
