@@ -144,13 +144,15 @@ Stage 2 題目不來自現有的課程 quiz bank（那些題目預設學生做�
 | 學期 | 必備 Skill Tags | 對應前學期 |
 |------|---------------|----------|
 | S1（起點） | literacy（識字）、typing（打字）、computer-basics（電腦操作） | 無（入學基礎） |
-| S2 | minecraft-basics、what-is-ai、prompt-basic | S1 全部 |
-| S3 | prompt-three-elements、image-gen-basic、ai-mistakes | S2 全部 |
-| S4 | minecraft-crafting、prompt-roleplay、image-gen-iteration | S3 全部 |
+| S2 | worksheet-reading-basic、typing-submit-basic、what-is-ai、prompt-basic | S1 全部 |
+| S3 | prompt-three-elements、image-gen-basic、ai-mistakes、output-control-basic | S2 全部 |
+| S4 | task-card-reading、tool-selection-basic、ai-review-revision、vscode-file-basics | S3 全部 |
 | S5 | html-css-basic（新增）、ai-creative-writing | S4 全部 |
 | S6 | vscode-basics（新增）、javascript-basic（新增）、github-copilot-basic（新增） | S5 全部 |
 | S7 | project-planning、version-control-basic | S6 全部 |
 | S8 | project-deployment、portfolio-basic | S7 全部 |
+
+> S3 第一版重排後，進入 S4 的門檻不再包含 Minecraft crafting / 指令方塊邏輯。Minecraft 僅保留為課後自由遊玩，不列入晉級判斷。S3 新增的任務工作流 skill tags 需在後續建立 S3 task definitions 與 quiz bank 時正式定義。
 
 ---
 
@@ -194,4 +196,4 @@ Stage 1（基礎評估）
 
 ---
 
-> 最後修改：2026-04-23，原因：初始建立，設計晉級考與新生分班兩階段機制
+> 最後修改：2026-07-23，原因：同步 S3 第一版重排；移除 S4 入學門檻中的 Minecraft 主線能力，改為任務卡、工具選擇、AI 評審修正與 VS Code 前置操作。
