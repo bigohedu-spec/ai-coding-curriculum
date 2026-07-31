@@ -54,7 +54,7 @@
 | S2-W01-A | Prompt 記憶回放   | EX  | 25  | Lab Terminal |
 | S2-W02-A | 格式控制大師        | EX  | 35  | Lab Terminal |
 | S2-W03-A | 字數挑戰          | EX  | 30  | Lab Terminal |
-| S2-W04-A | 語氣變身術         | EX  | 35  | Lab Terminal |
+| S2-W04-A | 語氣變身術（三幕 RPG，依交付）  | EX  | 73  | Lab Terminal |
 | S2-W05-A | AI 家教挑戰       | EX  | 40  | Lab Terminal |
 | S2-W06-A | Prompt 格式三連挑戰 | EX  | 45  | Lab Terminal |
 
@@ -108,3 +108,4 @@
 ---
 
 > 最後修改：2026-04-23，原因：初始 ingest
+> 最後修改：2026-07-22，原因：S2-W04 依交付回填——金幣 35 → **73**（遊戲 56＋小老師 TA 17；交付為三幕 RPG＋11 訪談追問，量增）。⚠️ S2 整體金幣經濟（各週 25–73 不一）與 TA 比例（本課約 30%、慣例 50%）待整體對齊決策；見 [[S2-W04-課程規格]] §5。
