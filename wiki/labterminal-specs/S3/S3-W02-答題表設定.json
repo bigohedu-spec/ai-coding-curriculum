@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "worksheetType": "gamma-answer",
+  "id": "S3W02",
+  "title": "S3 W02｜AI 編碼迷宮：馬雅星門的六道封印",
+  "shortTitle": "S3 W02",
+  "semester": "S3",
+  "week": 2,
+  "gammaUrl": "https://gamma.app/docs/xxxxx",
+  "questions": [
+    {
+      "id": "q1",
+      "title": "星曆石板",
+      "module": "text",
+      "coins": 45,
+      "prompt": "閱讀 GAMMA 第一章，用 Lab Terminal 判斷數字 13 的字母轉換方式，還原並分類機器紀錄。",
+      "requiredConcepts": ["#4FC3F7", "彎月", "階梯神殿", "木棉樹", "禁止文字"],
+      "minimumKeywordMatches": 4,
+      "minLength": 30,
+      "maxLength": 500,
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q1-sequence",
+            "type": "input",
+            "question": "依照中央、下方、兩側，輸入三個數量的順序。",
+            "placeholder": "例：4-2-5",
+            "acceptedTerms": ["1-3-2", "1－3－2", "1→3→2", "132"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "順序還不對。請回到 AI 的翻譯結果，依中央、下方、兩側重新查看數量。"
+          },
+          {
+            "id": "q1-event",
+            "type": "choice",
+            "question": "石板右下角的 13，提醒你先請 AI 做什麼？",
+            "options": ["判斷字母轉換方式", "生成一張新石板", "把所有數字加起來"],
+            "answerIndex": 0,
+            "errorMessage": "回到石板看看：這次先要讀懂字母怎麼改變。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "判斷數字 13 的英文字母轉換方式，還原並翻譯石板紀錄，分開石印要求與干擾資料。",
+        "expectedOutput": "文字說明字母轉換後，包含色票、三組物件與數量、禁止內容，並排除美洲豹與黑石。",
+        "mustInclude": ["#4FC3F7", "一輪彎月", "三座階梯神殿", "兩棵木棉樹", "不要文字"],
+        "rejectIf": ["答案空白", "只貼加密紀錄沒有還原", "把美洲豹或黑石列為石印要求"]
+      }
+    },
+    {
+      "id": "q2",
+      "title": "天空石印",
+      "module": "image",
+      "coins": 40,
+      "prompt": "使用第一題保存的整理結果，在 Lab Image 生成天空石印並上傳。",
+      "promptReviewCriteria": {
+        "passConditions": ["#4FC3F7", "彎月", "三座階梯神殿", "兩棵木棉樹", "不要文字"],
+        "minimumCharacterMatchRatio": 0.6
+      },
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q2-color",
+            "type": "input",
+            "question": "輸入這枚石印使用的完整 HEX 色票碼。",
+            "placeholder": "例：#12AB34",
+            "acceptedTerms": ["#4fc3f7", "4fc3f7"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "色票還不正確。請回到第一題已保存的整理結果再複製一次。"
+          },
+          {
+            "id": "q2-event",
+            "type": "choice",
+            "question": "製作天空石印前，要從哪裡複製資料？",
+            "options": ["第一題已保存的答題卡", "重新猜一次", "第六題影片"],
+            "answerIndex": 0,
+            "errorMessage": "這一題要使用第一題已保存的整理結果。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "使用第一題整理結果生成馬雅遺跡天空石印。",
+        "expectedOutput": "圖片呈現正確主色、彎月、三座階梯神殿、兩棵木棉樹，且沒有文字。",
+        "mustInclude": ["圖片附件", "天空藍主色", "彎月", "階梯神殿", "木棉樹"],
+        "rejectIf": ["沒有圖片附件", "提示詞沒有使用第一題資料", "物件或數量明顯錯誤"]
+      }
+    },
+    {
+      "id": "q3",
+      "title": "六面藍牆",
+      "module": "text",
+      "coins": 50,
+      "prompt": "使用第二題保存的色票比較六面牆，組合文字碎片並還原編碼訊息。",
+      "requiredConcepts": ["B", "D", "F", "Rk9SRVNULTEzMg==", "FOREST-132"],
+      "minimumKeywordMatches": 4,
+      "minLength": 25,
+      "maxLength": 500,
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q3-message",
+            "type": "input",
+            "question": "輸入還原後的完整『英文場景－數字』訊息。",
+            "placeholder": "例：TEMPLE-456",
+            "acceptedTerms": ["forest-132", "forest－132"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "訊息尚未完整還原。請保留英文場景、連字號和三個數字。"
+          },
+          {
+            "id": "q3-method",
+            "type": "choice",
+            "question": "比較六面藍牆時，最不能只靠什麼？",
+            "options": ["用眼睛猜顏色", "前題保存的色票", "Lab Terminal 比較數字"],
+            "answerIndex": 0,
+            "errorMessage": "六個顏色都很像，要用前題色票和數字比較。"
+          },
+          {
+            "id": "q3-motto",
+            "type": "choice",
+            "question": "本課的口訣第一步是什麼？",
+            "options": ["抓重點", "立刻生成", "直接猜答案"],
+            "answerIndex": 0,
+            "errorMessage": "想一想課程一開始的口訣。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "使用第二題精確色票找出最接近的牆面，組合並還原編碼。",
+        "expectedOutput": "文字說明色票比較結果、正確牆面、原始字串與還原訊息。",
+        "mustInclude": ["使用前題色票", "B、D、F", "Rk9SRVNULTEzMg==", "FOREST-132"],
+        "rejectIf": ["未使用前題色票", "只靠肉眼猜顏色", "沒有原始字串或還原結果"]
+      }
+    },
+    {
+      "id": "q4",
+      "title": "回聲祭壇",
+      "module": "audio",
+      "coins": 40,
+      "prompt": "使用第三題保存的場景與數字順序，在 Lab Music 生成開門音樂並上傳。",
+      "promptReviewCriteria": {
+        "passConditions": ["森林場景", "1-3-2", "鈴聲", "鼓聲", "木琴", "不要人聲"],
+        "minimumCharacterMatchRatio": 0.6
+      },
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q4-sounds",
+            "type": "input",
+            "question": "依播放順序輸入三種聲音名稱，不用填次數。",
+            "placeholder": "例：鼓聲→木琴→鈴聲",
+            "acceptedTerms": ["鈴聲→鼓聲→木琴", "鈴聲-鼓聲-木琴", "鈴聲、鼓聲、木琴"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "聲音順序還不對。請用第三題的數字順序逐一對照祭壇規則。"
+          },
+          {
+            "id": "q4-event",
+            "type": "choice",
+            "question": "回聲祭壇真正的播放順序來自哪裡？",
+            "options": ["第三題還原的數字順序", "樂器表排版順序", "自己喜歡的順序"],
+            "answerIndex": 0,
+            "errorMessage": "樂器表刻意打亂，順序要從第三題帶來。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "把第三題還原的場景與數字轉成開門音樂。",
+        "expectedOutput": "音訊使用森林氣氛，依 1、3、2 安排鈴聲、鼓聲與木琴，沒有歌詞。",
+        "mustInclude": ["音訊附件", "森林", "正確聲音順序", "約15秒"],
+        "rejectIf": ["沒有音訊附件", "未使用第三題結果", "聲音順序或次數錯誤"]
+      }
+    },
+    {
+      "id": "q5",
+      "title": "羽蛇階梯",
+      "module": "text",
+      "coins": 35,
+      "prompt": "使用第四題保存的聲音順序，請 Lab Terminal 翻譯機器規則並轉成動作。",
+      "requiredConcepts": ["MOVE(1)", "ROTATE(-90°)", "ROTATE(+90°)", "向前一步", "向左轉", "向右轉"],
+      "minimumKeywordMatches": 4,
+      "minLength": 20,
+      "maxLength": 400,
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q5-actions",
+            "type": "input",
+            "question": "依序輸入三個動作。",
+            "placeholder": "例：向右轉→向前一步→向左轉",
+            "acceptedTerms": ["向前一步→向左轉→向右轉", "向前一步-向左轉-向右轉", "向前一步、向左轉、向右轉"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "動作順序還不對。請從第四題複製聲音順序，再逐一對照機器規則。"
+          },
+          {
+            "id": "q5-event",
+            "type": "choice",
+            "question": "規則出現 RESET 時，代表什麼事？",
+            "options": ["多走一步會回到起點", "可以增加新動作", "星門已經打開"],
+            "answerIndex": 0,
+            "errorMessage": "回到羽蛇階梯的警告句再看一次。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "翻譯 STAR PATH 規則，使用第四題聲音順序得到三個動作。",
+        "expectedOutput": "文字解釋 MOVE、正負 90 度與 RESET，並列出正確動作順序。",
+        "mustInclude": ["使用前題聲音順序", "向前一步", "向左轉", "向右轉"],
+        "rejectIf": ["未使用第四題結果", "調換順序", "加入額外動作"]
+      }
+    },
+    {
+      "id": "q6",
+      "title": "星門影像",
+      "module": "video",
+      "coins": 40,
+      "prompt": "使用第二、三、五題保存的資料，在 Lab Video 生成星門通關影片並上傳。",
+      "promptReviewCriteria": {
+        "passConditions": ["馬雅遺跡", "天空石印", "森林", "向前一步", "向左轉", "向右轉", "不要文字"],
+        "minimumCharacterMatchRatio": 0.6
+      },
+      "postTaskQuiz": {
+        "showAfterTaskCompletion": true,
+        "items": [
+          {
+            "id": "q6-scene",
+            "type": "input",
+            "question": "輸入影片使用的場景名稱。",
+            "placeholder": "例：神殿",
+            "acceptedTerms": ["森林", "forest"],
+            "normalize": ["lowercase", "remove-whitespace"],
+            "match": "exact-or-contains-any-term",
+            "errorMessage": "場景不是重新猜的。請回到第三題已保存的還原結果查看。"
+          },
+          {
+            "id": "q6-event",
+            "type": "choice",
+            "question": "星門影像需要承接哪三張舊答題卡？",
+            "options": ["第二、三、五題", "第一、四、六題", "只需要第六題"],
+            "answerIndex": 0,
+            "errorMessage": "回到星門影像的提示，查看它要求的三份資料。"
+          },
+          {
+            "id": "q6-motto",
+            "type": "choice",
+            "question": "本課最後要做的檢查是什麼？",
+            "options": ["檢查結果", "立刻關掉頁面", "把所有線索忘掉"],
+            "answerIndex": 0,
+            "errorMessage": "想一想本課口訣的最後幾步。"
+          }
+        ]
+      },
+      "reviewBrief": {
+        "task": "把前面保存的石印、場景與動作整合成通關影片。",
+        "expectedOutput": "影片呈現馬雅遺跡森林、天空石印與正確三步動作，沒有文字或恐怖畫面。",
+        "mustInclude": ["影片附件", "第二題石印資料", "第三題場景", "第五題動作順序"],
+        "rejectIf": ["沒有影片附件", "未承接舊答題卡", "場景或動作錯誤"]
+      }
+    }
+  ]
+}
