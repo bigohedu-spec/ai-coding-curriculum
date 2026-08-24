@@ -60,11 +60,11 @@
 
 ### 模組二：認識多 AI，比較與挑對的（W7–W12）
 
-> ⚠️ **工具政策（2026-08-20 決策・依第十四節）**：模組二**全程在 Lab Terminal 內完成、學生不需帳號、不碰真 Claude/ChatGPT**。多 AI 比較＝**Lab Terminal 內建多個 AI 夥伴**（後端可路由不同模型，對學生只是幾個夥伴）。此**取代 CLAUDE.md §八/§11 舊有「W07–W09 保留真 Claude/ChatGPT」例外**（建議回頭修那兩節）。W07 見 [[S2-W07-課程規格]]。
+> ⚠️ **工具政策（2026-08-20 決策・依第十四節）**：模組二**全程在 Lab Terminal 內完成、學生不需帳號、不進 ChatGPT/Claude 網站**。多 AI 比較＝Lab Terminal **後端路由真實模型**（如 GPT／Claude），**介面標出模型真名、但學生不註冊/不登入**（API 金鑰只在後端）。此**取代 CLAUDE.md §八/§11 舊有「W07–W09 保留真 Claude/ChatGPT（帳號）」例外**（CLAUDE.md 已於 2026-08-20 同步修訂）。W07 見 [[S2-W07-課程規格]]。
 
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
-| S2-W07-A | AI 夥伴大廳：找到最適合的幫手（認識多 AI） | EX | 250 | Lab Terminal（內建多 AI） |
+| S2-W07-A | AI 模型比一比：GPT vs Claude（親手用兩個真模型＋比較） | EX | 250 | Lab Terminal（後端路由真模型） |
 | S2-W08-A | 雙 AI 大比拼 | EX | 250 | Lab Terminal（內建多 AI） |
 | S2-W09-A | AI 選擇題 | EX | 250 | Lab Terminal（內建多 AI） |
 | S2-W10-A | AI 創作工廠 | EX | 250 | Lab Terminal |
