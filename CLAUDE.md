@@ -280,7 +280,7 @@
 學生遇到問題時，第一步是問 AI（Lab Terminal），而不是問老師。
 - **Lab Terminal** 是課堂統一使用的 AI 提問介面（API 串接，不需帳號）
 - 任務中「只是為了提問」的 ChatGPT / Claude 一律改為 Lab Terminal
-- 保留：有教學目的的工具比較任務（S2-W07、S2-W08、S2-W09）
+- **多 AI 比較（S2-W07/W08/W09 等）也一律在 Lab Terminal 內完成**：用 **Lab Terminal 內建的多個 AI 夥伴**（後端可路由不同模型，對學生只是幾個夥伴），**學生不需帳號、不碰真 Claude/ChatGPT**。（2026-08-20 決策，依第十四節【不可違反】；**取代**先前「保留真 Claude/ChatGPT 做比較教學」的舊例外。）
 - 詳見 `wiki/concepts/ai-first.md`
 
 ### 核心概念三：翻轉教育 [[flipped-education]]
@@ -368,7 +368,7 @@ S5 起採用的開發工作流。學生不再以「學習如何寫程式碼」�
 
 當審視或修改任務時，遵照以下規則：
 - `ChatGPT` 或 `Claude` 用於「提問/查詢/創作輔助」→ 改為 `Lab Terminal`
-- `ChatGPT` 或 `Claude` 用於「工具比較教學」→ **保留原工具**
+- `ChatGPT` 或 `Claude` 用於「工具比較教學」→ **改為 Lab Terminal 內建的多個 AI 夥伴**（學生不需帳號、不碰真 Claude/ChatGPT；後端可路由不同模型）。〔2026-08-20 更新，依第十四節【不可違反】，**取代**原「保留原工具」〕
 - 圖像生成：保留 `Canva AI` / `Adobe Firefly`
 - 程式輔助：保留 `GitHub Copilot`
 - 音樂/影片：保留 `Suno` / `Runway`
