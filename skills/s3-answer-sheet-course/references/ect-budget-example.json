@@ -1,0 +1,54 @@
+{
+  "grade": 4,
+  "target_min": [50, 65],
+  "activities": [
+    {
+      "label": "學生可見故事、題面與通關條件",
+      "action": "read",
+      "chars": 1700,
+      "instruction_chars": 25
+    },
+    {
+      "label": "四題 Prompt 與短答案輸入",
+      "action": "type",
+      "chars": 200
+    },
+    {
+      "label": "序章、題前與題後檢核",
+      "action": "select",
+      "option_chars": 36,
+      "count": 19
+    },
+    {
+      "label": "工具切換、上傳、送出與返回",
+      "action": "click",
+      "count": 35
+    },
+    {
+      "label": "找資料與修改決策",
+      "action": "think",
+      "count": 12
+    },
+    {
+      "label": "題目與工具轉場",
+      "action": "transition",
+      "count": 20
+    },
+    {
+      "label": "三次媒體等待預算",
+      "action": "think",
+      "count": 3,
+      "seconds": 60
+    },
+    {
+      "label": "舉手告知老師",
+      "action": "tell_teacher",
+      "count": 1
+    },
+    {
+      "label": "老師完成驗收",
+      "action": "teacher_confirm",
+      "count": 1
+    }
+  ]
+}

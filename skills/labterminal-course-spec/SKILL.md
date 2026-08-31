@@ -7,6 +7,12 @@ description: |
 
 # Lab Terminal 課程開發文本生成器
 
+## S3 GAMMA＋答題卡架構路由（優先於本檔其餘流程）
+
+若需求是 S3 的「答題版學習單／GAMMA＋右側答題卡／gamma-answer-worksheet」，不要套用本檔的 7-screen 單檔 HTML 骨架。改用專案內 `skills/s3-answer-sheet-course/SKILL.md`，並以 `wiki/labterminal-specs/S3/S3-答題版學習單新架構規格.md` 為共通正典。
+
+該模式固定產出學生學習單、schema v3 課程規格與教案三文件；本檔後續的 7-screen、Rehearsal Modal、Icon 清單與單檔 HTML 規則只適用非 S3 答題版課程。
+
 ## 你的任務
 
 讀取一份既有的**學習單**，把它轉換成一份**給工程 LLM 的開發規格（建置文本）**。
