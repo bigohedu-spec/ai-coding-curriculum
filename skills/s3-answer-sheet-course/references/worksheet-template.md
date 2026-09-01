@@ -1,6 +1,6 @@
 # S3 答題版｜學生學習單模板
 
-> 使用前先讀總規格 §P，依 `scaffoldProfile` 刪除不適用段落。`{{...}}` 是生成時必須替換的欄位。
+> 使用前先讀總規格 §P 與 [worksheet-writing-standard.md](worksheet-writing-standard.md)，先寫清楚學生的主要轉換動作，再依 `scaffoldProfile` 選擇下方任務殼層。`{{...}}` 是生成時必須替換的欄位。W05 是學生端工程基準；它的同名欄位搬運只適用於對應能力，`失敗結果：XXX` 也不是固定段落。
 
 ```markdown
 # S3 W{{NN}}｜{{COURSE_TITLE}} 學習單
@@ -11,7 +11,7 @@
 
 ## 今天的冒險
 
-{{HOOK_AND_STORY_CAUSE}}
+{{CONCISE_HOOK_WITH_PROBLEM_STUDENT_ROLE_SUPPORTING_ROLES_AND_PROMISED_RESULT}}
 
 今天的口訣：
 
@@ -39,21 +39,7 @@
 
 **任務 ID**：S3-W{{NN}}-A
 
-### 背景故事
-
-{{WHY_THIS_TASK_EXISTS}}
-
-### 謎題內容
-
-{{VISIBLE_SOURCE_DATA_AND_STUDENT_GOAL}}
-
-### 通關條件
-
-{{STUDENT_VISIBLE_OUTPUT_CONTRACT_WITHOUT_HIDDEN_ANSWER}}
-
-### 提示
-
-{{DIRECTION_ONLY_HINT}}
+{{TASK_BODY_FROM_ONE_PROFILE_APPROPRIATE_SHELL_BELOW}}
 
 <!-- GAMMA_ASSET_PROMPT
 用途：任務 A 場景圖
@@ -85,7 +71,7 @@
 
 ## {{DELIVER_ENDING_TITLE}}
 
-{{ENDING_THAT_USES_THE_STUDENT_RESULTS_AND_CLOSES_THE_HOOK}}
+{{ENDING_THAT_USES_THE_STUDENT_RESULTS_CLOSES_THE_HOOK_AND_SHOWS_CHARACTER_OR_COMMUNITY_CHANGE}}
 
 ## 卡住了嗎？
 
@@ -111,7 +97,55 @@
 Profile adjustments:
 
 - `onboarding`: remove the prologue and four-section puzzle shape when unnecessary; explicit tool names and copy-ready prompts are allowed.
-- `guided-chain`: keep a complete prompt frame with clearly marked prior-card slots.
+- `guided-chain`: choose the shell that matches the assessed action. For label-matched placement, use the guided field-placement shell below. For prior-card retrieval, keep a complete frame with clearly marked prior-card slots without repeating the prior answer.
 - `semi-open-chain`: a visible “你可以這麼問” may appear, but the actual session input must remain empty.
 - `autonomous-chain`: keep the four sections per task; do not include complete prompts, step-by-step completion instructions, quiz questions, or tool answers.
 
+Guided field-placement task shell (conditional; labels must match exactly):
+
+````markdown
+### {{MISCONCEPTION_CHARACTER}}的話
+
+{{ONE_INCOMPLETE_OR_MISTAKEN_INSTRUCTION}}
+
+### {{OBSERVABLE_PROBLEM_HEADING}}
+
+{{ONE_VISIBLE_CONSEQUENCE_AND_THE_MISSING_INFORMATION_TYPE}}
+
+### {{STAKEHOLDER_CHARACTER}}的話｜{{CURRENT_DIMENSION}}
+
+{{TWO_OR_THREE_NATURAL_SENTENCES_CONNECTING_PREVIOUS_PROGRESS_TO_THE_CURRENT_NEED}}
+
+- {{FIELD_LABEL_1}}：`{{ONE_CANONICAL_COPYABLE_VALUE}}`
+- {{FIELD_LABEL_2}}：`{{ONE_CANONICAL_COPYABLE_VALUE}}`
+
+### 可複製填空 Prompt｜{{SLOT_COUNT}} 個空格
+
+```text
+{{FRAME_WITH_PLACEHOLDERS_USING_THE_EXACT_FIELD_LABELS_ABOVE}}
+```
+
+### 完成成果
+
+{{CURRENT_OUTPUT_AND_WHAT_LATER_DIMENSION_IS_NOT_HANDLED_YET}}
+````
+
+Open or autonomous task shell:
+
+```markdown
+### 背景故事
+
+{{WHAT_CHANGED_PREVIOUSLY_AND_WHY_THIS_TASK_IS_THE_CAUSAL_NEXT_STEP}}
+
+### 謎題內容
+
+{{VISIBLE_SOURCE_DATA_AND_STUDENT_GOAL}}
+
+### 通關條件
+
+{{STUDENT_VISIBLE_OUTPUT_CONTRACT_WITHOUT_HIDDEN_ANSWER}}
+
+### 提示
+
+{{DIRECTION_ONLY_HINT}}
+```

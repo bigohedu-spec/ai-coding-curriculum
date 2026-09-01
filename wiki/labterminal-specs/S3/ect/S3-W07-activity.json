@@ -1,0 +1,90 @@
+{
+  "grade": 4,
+  "target_min": [50, 65],
+  "activities": [
+    {
+      "label": "閱讀學習單必要可見內容（分段呈現）",
+      "action": "read",
+      "chars": 2650,
+      "instruction_chars": 25
+    },
+    {
+      "label": "閱讀 15 題小測題幹與成功回饋（逐題呈現）",
+      "action": "read",
+      "chars": 521,
+      "instruction_chars": 25
+    },
+    {
+      "label": "閱讀並選擇 15 題選項（共 355 字）",
+      "action": "select",
+      "option_chars": 355,
+      "count": 1
+    },
+    {
+      "label": "補足其餘 14 題選項點擊",
+      "action": "click",
+      "count": 14
+    },
+    {
+      "label": "14 個同名值搬運、1 次語氣替換、五題開啟送出綁定與導覽",
+      "action": "click",
+      "count": 72
+    },
+    {
+      "label": "任務 A：分類三個加粗片段",
+      "action": "think",
+      "count": 1,
+      "seconds": 20
+    },
+    {
+      "label": "任務 B：依四個方向抽取未加粗片段",
+      "action": "think",
+      "count": 1,
+      "seconds": 30
+    },
+    {
+      "label": "任務 C：從快速喊話抽取四個禁止聲音",
+      "action": "think",
+      "count": 1,
+      "seconds": 40
+    },
+    {
+      "label": "任務 D：從高雜訊喊話分類誰、場合、感受",
+      "action": "think",
+      "count": 1,
+      "seconds": 50
+    },
+    {
+      "label": "任務 E：比較改口中的舊感受與新感受",
+      "action": "think",
+      "count": 1,
+      "seconds": 30
+    },
+    {
+      "label": "聆聽五段 30 秒音軌並找缺口",
+      "action": "think",
+      "count": 5,
+      "seconds": 45
+    },
+    {
+      "label": "五題送出前判斷",
+      "action": "think",
+      "count": 5
+    },
+    {
+      "label": "題目、音軌與小測轉場",
+      "action": "transition",
+      "count": 15
+    },
+    {
+      "label": "舉手告知老師",
+      "action": "tell_teacher",
+      "count": 1
+    },
+    {
+      "label": "老師完成驗收",
+      "action": "teacher_confirm",
+      "count": 1
+    }
+  ]
+}
