@@ -66,6 +66,8 @@
 
 - `preReadChecks`：{{PROFILE_POLICY}}。
 - `readChecks`：{{PHASE_SEQUENCE_AND_COUNTS}}。
+- 認知覆蓋：{{QUESTION_FUNCTION_COVERAGE_BY_TASK}}；題量由覆蓋與 ECT 決定，不設灌水配額。
+- 每個串接任務都要能確認前題結果、眼前缺口、現在動作、保留邊界與下一狀態；可合併成較少題，但不可只靠學習單長篇指示。
 - 全部使用本地 `answerIndex`；答錯保留成果，只指向回看方向。
 - 所有 ID 唯一，草稿依 ID 保存，不依陣列 index。
 
@@ -91,6 +93,11 @@
   "scaffoldProfile": "{{SCAFFOLD_PROFILE}}",
   "studentToolHints": {{TRUE_OR_FALSE}},
   "reviewFeedbackMode": "direction-only",
+  "learningContract": {
+    "observableCapability": "{{ONE_OBSERVABLE_CAPABILITY}}",
+    "conceptBoundaries": ["{{CONFUSABLE_CONCEPT_PAIR_OR_SET}}"],
+    "questionFunctions": ["{{STATE_RECAP}}", "{{CURRENT_PROBLEM}}", "{{CURRENT_ACTION}}", "{{NEXT_ACTION}}"]
+  },
   "initialQuestionId": "{{INITIAL_QUESTION_ID}}",
   "mantra": ["{{MANTRA_STEP_1}}", "{{MANTRA_STEP_2}}", "{{MANTRA_STEP_3}}", "{{MANTRA_STEP_4}}"],
   "questions": [
@@ -107,6 +114,8 @@
       "studentPromptEditable": false,
       "expectedKind": "none",
       "coins": 0,
+      "responseCards": [],
+      "unlockOnPass": "{{FIRST_MAIN_QUESTION_ID}}",
       "preReadChecks": [
         {
           "id": "prologue-data",
@@ -134,6 +143,20 @@
       "studentGuidance": "{{DIRECTION_ONLY_GUIDANCE_IF_PROFILE_ALLOWS}}",
       "interactionMode": "one-question-one-result",
       "studentPromptEditable": true,
+      "stateBridge": {
+        "previousResult": "{{ALREADY_VALID_RESULT}}",
+        "currentProblem": "{{STILL_WRONG_OR_MISSING}}",
+        "currentAction": "{{ONE_ACTION_AND_OUTPUT_NOW}}",
+        "preserve": ["{{PRIOR_EVIDENCE_TO_KEEP}}"],
+        "doNotDo": ["{{LIKELY_DESTRUCTIVE_OR_PREMATURE_ACTION}}"],
+        "nextState": "{{WHAT_THIS_TASK_ENABLES}}"
+      },
+      "conceptBoundary": {
+        "label": "{{LOCAL_CONCEPT}}",
+        "diagnosticQuestion": "{{QUESTION_THIS_CONCEPT_ANSWERS}}",
+        "includes": ["{{POSITIVE_EVIDENCE}}"],
+        "excludes": ["{{NEAREST_COMPETING_CONCEPT}}"]
+      },
       "autoContextFrom": ["contentRef:任務 A｜{{TASK_A_TITLE}}"],
       "responseCards": ["通關答案"],
       "toolId": "{{terminal|image|music|video}}",
@@ -215,6 +238,8 @@
 
 - [ ] 三文件、revision、H2 content refs、ID 與金幣通過 validator。
 - [ ] Profile 支架符合本週能力，沒有答案洩漏。
+- [ ] 題庫每題對應一個認知功能；題數、phase 與 `required*Checks` 和 JSON 一致。
+- [ ] 串接任務的前題結果、眼前缺口、現在動作、保留邊界與下一狀態可被小朋友逐步辨認，且沒有改用學習單長篇指示。
 - [ ] 每題一個主要動作、一個成果、一個最小保存包。
 - [ ] 主成果本地判定；技術失敗不算學生失敗。
 - [ ] ECT 50～65 分鐘，與教案使用同一動作清單。
@@ -232,9 +257,9 @@
 ## Profile-specific cleanup before validation
 
 - If there is no prologue, remove the entire prologue object and point `initialQuestionId` to the first main task.
+- If the week is simple and the optional `learningContract`, `stateBridge`, or `conceptBoundary` metadata adds no implementation or teaching value, remove those objects rather than leaving empty fields.
 - For `onboarding`, `preReadChecks` can be absent and explicit tool guidance is allowed.
 - For `semi-open-chain`, a hidden `toolPrompt` can exist for server review, but it must never prefill the student input.
 - For `autonomous-chain`, remove every `toolPrompt`; keep `studentGuidance`, exactly three `preReadChecks` per main task, and the weekly declared `readChecks` policy.
 - Remove `promptReviewCriteria` from pure text tasks; replace attachment rules with local text concepts and length bounds.
 - Never leave a `{{...}}` token in a deliverable.
-

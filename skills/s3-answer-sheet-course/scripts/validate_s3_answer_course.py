@@ -107,6 +107,8 @@ def validate_choice(check: dict[str, Any], label: str, report: Report) -> None:
         report.error(f"{label}: answerIndex is outside the options array.")
     if len({str(item).strip() for item in options}) != len(options):
         report.error(f"{label}: choice options must be unique.")
+    if not str(check.get("successFeedback", "")).strip():
+        report.warn(f"{label}: missing concise successFeedback.")
     if not str(check.get("retryFeedback", "")).strip():
         report.warn(f"{label}: missing direction-only retryFeedback.")
 
@@ -228,6 +230,14 @@ def validate_config(
 
         if not is_prologue and question.get("interactionMode") != "one-question-one-result":
             report.error(f"{label}: main tasks must use one-question-one-result.")
+        if is_prologue and question.get("interactionMode") == "reading-check-only":
+            if question.get("responseCards") != []:
+                report.error(f"{label}: reading-check-only prologue requires responseCards=[].")
+            unlock_id = question.get("unlockOnPass")
+            if unlock_id not in ids or ids.index(unlock_id) <= index:
+                report.error(
+                    f"{label}: reading-check-only prologue unlockOnPass must identify a later question."
+                )
 
         tool_id = question.get("toolId")
         if tool_id in MEDIA:
@@ -261,6 +271,18 @@ def validate_config(
             report.error(f"{label}: readChecks must be an array.")
             reads = []
 
+        if isinstance(criteria, dict):
+            declared_pre = criteria.get("requiredPreReadChecks")
+            declared_reads = criteria.get("requiredReadChecks")
+            if declared_pre is not None and declared_pre != len(pre):
+                report.error(
+                    f"{label}: requiredPreReadChecks={declared_pre!r} but preReadChecks has {len(pre)} item(s)."
+                )
+            if declared_reads is not None and declared_reads != len(reads):
+                report.error(
+                    f"{label}: requiredReadChecks={declared_reads!r} but readChecks has {len(reads)} item(s)."
+                )
+
         if profile == "autonomous-chain" and not is_prologue:
             if "toolPrompt" in question:
                 report.error(f"{label}: autonomous-chain forbids toolPrompt.")
@@ -289,6 +311,16 @@ def validate_config(
             next_ref = check.get("nextContentRef")
             if next_ref is not None and next_ref not in heading_set:
                 report.error(f"{label}/{check_id}: nextContentRef {next_ref!r} is not a worksheet H2.")
+
+        read_objects = [item for item in reads if isinstance(item, dict)]
+        display_orders = [item.get("displayOrder") for item in read_objects if "displayOrder" in item]
+        if display_orders:
+            if len(display_orders) != len(read_objects):
+                report.warn(f"{label}: only some readChecks declare displayOrder.")
+            elif not all(isinstance(item, int) for item in display_orders):
+                report.error(f"{label}: readCheck displayOrder values must be integers.")
+            elif display_orders != list(range(1, len(display_orders) + 1)):
+                report.error(f"{label}: readCheck displayOrder must follow rendered order starting at 1.")
 
         auto_context = question.get("autoContextFrom", [])
         if auto_context is not None and not isinstance(auto_context, list):
@@ -374,4 +406,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-

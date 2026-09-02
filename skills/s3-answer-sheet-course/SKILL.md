@@ -14,6 +14,7 @@ Produce a coherent three-file course bundle, not an isolated worksheet.
 3. Select exactly one scaffold profile: `onboarding`, `guided-chain`, `semi-open-chain`, or `autonomous-chain`.
 4. Read only the templates needed for the requested deliverables:
    - Student worksheet: read [references/worksheet-writing-standard.md](references/worksheet-writing-standard.md), then [references/worksheet-template.md](references/worksheet-template.md).
+   - Question bank, `preReadChecks`, or `readChecks`: read [references/question-bank-design-standard.md](references/question-bank-design-standard.md).
    - Weekly course spec and schema v3 JSON: [references/course-spec-template.md](references/course-spec-template.md)
    - Teacher lesson plan: [references/lesson-plan-template.md](references/lesson-plan-template.md)
 
@@ -22,16 +23,17 @@ If the request is an audit only, do not edit files. Run the validator and report
 ## Required workflow
 
 1. Define the observable weekly capability, In/Out of Scope, Hook/Deliver, and scaffold profile. Name the student's exact transformation: copy by matching labels, retrieve prior data, classify, compose, revise, or assemble. Do not silently add summarizing, inference, or rewriting when it is not being taught.
-2. Design the teacher-only answer chain before writing the story. Each main task has one primary cognitive action, one primary result, a minimal `passContent`, and a local reproducible pass rule.
-3. Create or update all three files unless the user explicitly narrows the deliverable:
+2. Design the teacher-only answer chain before writing the story. Each main task has one primary cognitive action, one primary result, a minimal `passContent`, and a local reproducible pass rule. For a chained week, define the previous result, current problem, current action, preservation boundary, and next state.
+3. Design the question bank from a learning contract and cognitive-function matrix. Use short checks to focus the child on previous-current-next state and concept boundaries; do not compensate for a weak bank by adding procedural paragraphs to the worksheet.
+4. Create or update all three files unless the user explicitly narrows the deliverable:
    - `wiki/worksheets/S3/S3-WNN-學習單.md`
    - `wiki/labterminal-specs/S3/S3-WNN-課程規格-G1-G2.md`
    - `wiki/lesson-plans/S3/S3-WNN-教案.md`
-4. Lock worksheet H2 headings and `CONTENT_REVISION` before writing the config. Copy headings verbatim into `contentRef` and `nextContentRef`.
-5. Put the sole `LAB_TERMINAL_WORKSHEET_CONFIG` JSON block in the weekly course spec. New work uses schema v3 and declares `scaffoldProfile`.
-6. Keep hidden answer keys, `passContent`, validation terms, coins, and quiz answers out of the student worksheet. In a `guided-chain` match-and-copy task, canonical values explicitly authorized as student-visible source data by the weekly spec may appear; they are task input, not a leaked hidden key. Keep JSON out of the lesson plan.
-7. Estimate the Grade 4 main-line duration with `activity-time-estimator`; use one action inventory for both the spec and lesson plan. Target 50–65 minutes.
-8. Run:
+5. Lock worksheet H2 headings and `CONTENT_REVISION` before writing the config. Copy headings verbatim into `contentRef` and `nextContentRef`.
+6. Put the sole `LAB_TERMINAL_WORKSHEET_CONFIG` JSON block in the weekly course spec. New work uses schema v3 and declares `scaffoldProfile`.
+7. Keep hidden answer keys, `passContent`, validation terms, coins, and quiz answers out of the student worksheet. In a `guided-chain` match-and-copy task, canonical values explicitly authorized as student-visible source data by the weekly spec may appear; they are task input, not a leaked hidden key. Keep JSON out of the lesson plan.
+8. Estimate the Grade 4 main-line duration with `activity-time-estimator`; use one action inventory for both the spec and lesson plan. Count all mandatory stems, options, required feedback views, and clicks. Target 50–65 minutes.
+9. Run:
 
 ```powershell
 python skills/s3-answer-sheet-course/scripts/validate_s3_answer_course.py `
@@ -48,6 +50,8 @@ Resolve every error. Review every warning and record why any warning remains.
 - `contentRevision`, `contentSource.path`, all content references, explicit IDs, dependencies, and the 250-coin sum must agree.
 - AI can generate or explain, but local reproducible rules decide completion. Technical generation failure cannot count as student failure.
 - Later tasks may consume completed earlier `passContent`; they must not reveal earlier answers before completion.
+- The worksheet is a concise story-and-data surface for children, not a procedure manual. Put focus-control in short single-judgment checks without turning the bank into another reading passage.
+- Question quantity follows cognitive coverage and ECT, not a fixed quota. Every chained task must make previous result, current problem, current action, preservation boundary, and next state recoverable across its checks and task contract.
 - Media is either signed live Lab output or an explicitly declared teacher-library asset. Preserve the student's prompt in both cases.
 - Preserve drafts, attachments, quiz answers, and modification history across rejection, reload, task switching, and recoverable failure.
 - Student-facing content uses Lab names and no third-party AI brands.
@@ -71,4 +75,4 @@ Resolve every error. Review every warning and record why any warning remains.
 
 ## Completion report
 
-State which files were created or changed, selected scaffold profile, task/coin totals, ECT result, validator error/warning counts, and any explicit assumption still awaiting classroom calibration.
+State which files were created or changed, selected scaffold profile, task/coin totals, question totals by phase, ECT result, validator error/warning counts, and any explicit assumption still awaiting classroom calibration.

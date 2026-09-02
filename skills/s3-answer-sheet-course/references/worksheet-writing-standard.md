@@ -77,6 +77,9 @@ Do not describe this pattern as autonomous Prompt writing. The assessed progress
 
 Match the density and scanability of W05's student-visible prose, not the length of hidden `GAMMA_ASSET_PROMPT` comments.
 
+- Treat the worksheet as a concise story-and-data surface, not a procedure manual. Keep only what the child must see to understand the situation, use the source data, and recognize the expected result.
+- Put step-by-step focus control, previous-task recall, current-problem recognition, and next-action confirmation in the short question bank. Follow [question-bank-design-standard.md](question-bank-design-standard.md).
+- Do not duplicate the same direction in story dialogue, a warning block, an operation list, and a quiz. Choose the one surface that best serves the function.
 - Give each paragraph one main idea and prefer one to three short sentences.
 - State the general procedure once. Task blocks should contain only the current variation.
 - Repeat content only when the repetition changes its function, such as natural dialogue followed by a copy zone.
@@ -131,4 +134,5 @@ Read only the student-visible worksheet and confirm:
 - If using field placement, every source label has one value and an exactly matching destination label.
 - The final task uses the student's own passed work and closes the Hook.
 - Repeated explanations, ornamental lore, unnecessary terms, and accidental answer leakage have been removed.
+- Operational prose has not been used to replace a missing question-bank state bridge.
 - No W05-specific field count, character, plot, or `失敗結果` heading was copied merely because it appears in the benchmark.
