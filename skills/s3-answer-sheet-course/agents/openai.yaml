@@ -1,0 +1,7 @@
+interface:
+  display_name: "S3 答題版課程生成器"
+  short_description: "依 W01–W04 架構生成並驗證 S3 三文件課程包"
+  default_prompt: "Use $s3-answer-sheet-course to create an S3 worksheet, course spec, and lesson-plan bundle from the tested answer-card architecture."
+policy:
+  allow_implicit_invocation: true
+

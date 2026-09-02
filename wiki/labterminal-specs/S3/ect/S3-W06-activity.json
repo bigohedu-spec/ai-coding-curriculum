@@ -1,0 +1,66 @@
+{
+  "grade": 4,
+  "target_min": [50, 65],
+  "activities": [
+    {
+      "label": "閱讀學習單必要可見內容（分段呈現）",
+      "action": "read",
+      "chars": 2533,
+      "instruction_chars": 25
+    },
+    {
+      "label": "閱讀右側序章四需求概念卡",
+      "action": "read",
+      "chars": 82,
+      "instruction_chars": 25
+    },
+    {
+      "label": "閱讀 27 題序章與主任務檢核題幹（共 549 字）",
+      "action": "read",
+      "chars": 549,
+      "instruction_chars": 25
+    },
+    {
+      "label": "閱讀並選擇 27 題選項（共 725 字）",
+      "action": "select",
+      "option_chars": 725,
+      "count": 1
+    },
+    {
+      "label": "補足其餘 26 題選項點擊",
+      "action": "click",
+      "count": 26
+    },
+    {
+      "label": "17 個同名值搬運、1 次欄位替換、五題開啟送出綁定與導覽",
+      "action": "click",
+      "count": 72
+    },
+    {
+      "label": "觀看五段施工影片並分辨已修好與仍有問題",
+      "action": "think",
+      "count": 5,
+      "seconds": 45
+    },
+    {
+      "label": "五題送出前檢查只修本題欄位",
+      "action": "think",
+      "count": 5
+    },
+    {
+      "label": "序章、任務、影片與檢核轉場",
+      "action": "transition",
+      "count": 27
+    },
+    {
+      "label": "舉手告知老師",
+      "action": "tell_teacher",
+      "count": 1
+    },
+    {
+      "label": "老師完成驗收",
+      "action": "teacher_confirm",
+      "count": 1
+    }
+  ]
+}

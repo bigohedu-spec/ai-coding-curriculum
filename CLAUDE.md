@@ -1368,6 +1368,17 @@ clean white background, square 1:1 ratio, simple distinct shapes, high contrast.
 
 ---
 
+### S3 GAMMA＋答題卡架構例外【S3 新版強制適用】
+
+S3 的 `gamma-answer-worksheet` 不是本節 7-screen 單檔 HTML 課程。生成或修改 S3 答題版時，不套用固定 7-screen、Rehearsal Modal、技能牆或單檔 HTML 交付；改依下列共通正典：
+
+- `wiki/labterminal-specs/S3/S3-答題版學習單新架構規格.md`
+- `skills/s3-answer-sheet-course/SKILL.md`
+
+S3 答題版固定維護「學生學習單＋課程規格內嵌 schema v3 JSON＋教案」三文件；左側 GAMMA 負責學生故事與題面，右側答題卡負責互動、檢核、保存與解鎖。若本節一般 Web App 規則與 S3 答題版總規格衝突，以 S3 總規格為準；共同原則（本地可重現判定、答案隔離、狀態保存、250 金幣、時長驗證）仍適用。
+
+---
+
 ## 二十一、每堂課金幣總額規則【標準；S5 已套用，其餘學期改版時跟進】
 
 ### 核心原則

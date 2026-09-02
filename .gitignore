@@ -28,4 +28,7 @@ outputs/
 **/outputs/
 *.local.md
 
+# === S3W07 本地音樂生成暫存（不入庫）===
+/tmp/s3w07-audio/
+
 # === 大型二進位改用 Git LFS 追蹤（見 .gitattributes），此處不忽略 ===
