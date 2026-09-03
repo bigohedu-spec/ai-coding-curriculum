@@ -66,7 +66,7 @@
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
 | S2-W07-A | AI 模型比一比：GPT vs Claude（用兩個真模型深度研究一個大題目＋比較） | EX | 250 | Lab Terminal（後端路由真模型） |
-| S2-W08-A | 雙 AI 大比拼 | EX | 250 | Lab Terminal（內建多 AI） |
+| S2-W08-A | 逃離數碼界·第二層：自選主題深研＋追問（原「雙 AI 大比拼」） | EX | 250 | Lab Terminal（後端路由真模型） |
 | S2-W09-A | AI 選擇題 | EX | 250 | Lab Terminal（內建多 AI） |
 | S2-W10-A | AI 創作工廠 | EX | 250 | Lab Terminal |
 | S2-W11-A | 完整創作任務 | EX | 250 | Lab Terminal |
