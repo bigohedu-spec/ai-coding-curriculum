@@ -483,6 +483,13 @@ W08 目前四個任務（A/B/C/D）設計為通用練習，需在下次修訂時
 
 ## 十四、工具使用政策【不可違反】
 
+> ⚠️ **2026-09 部署平台決策（優先於本節與第十六節的舊雲端/部署條文）**：作品部署與雲端後端全面改用**自架的 Big-Oh Hosting（bigoh.uk）**。
+> - **部署**：Big-Oh CLI（`curl` 抓 `bigoh.mjs` → `node bigoh.mjs login`[學生本人瀏覽器授權] → `node bigoh.mjs deploy` → `https://<slug>.bigoh.uk`，免審核即時上線、CLI 優先）。**取代 GitHub Pages。**
+> - **雲端（存檔/排行/多人/留言/帳號）**：平台自動注入的全域 `window.BO`（`BO.set/get`、`BO.score/top`、`BO.room`、`BO.post/list`、`BO.account`、`BO.visitor`）——**免 import、免網址、免金鑰、免註冊**。**取代 Supabase 與 Firebase**（下方「雲端資料庫採 Supabase」「Firebase」條文作廢）。
+> - **禁止**：作品內不得有外部網址 `fetch`（CSP 擋）、`<script type="importmap">`（平台自動注入）、任何金鑰/資料庫設定、廣告碼（平台在外框處理廣告）。作者名用暱稱、index.html 在根目錄、檔名英數。
+> - **可 bare import 的函式庫**：three@0.169（含 OrbitControls/GLTFLoader/DRACOLoader）、rapier@0.14、tone@15、p5@1.9；其他函式庫打包進專案。
+> - 規範來源：`RULESFORAI.md` / `DEPLOYFORAI.md`（線上版 `https://bigoh.uk/llms.txt`）。S5 教案/學習單已依此遷移（2026-09）。
+
 ### 核心原則
 
 **本課程所有 AI 功能均使用自建系統，不使用任何需要學生另行申請帳號的第三方 AI 服務。**
@@ -503,17 +510,17 @@ W08 目前四個任務（A/B/C/D）設計為通用練習，需在下次修訂時
 |------|------|
 | Minecraft | 課程核心引擎，由機構統一授權 |
 | VS Code | 本地端編輯器，無需帳號 |
-| GitHub / GitHub Pages | 版本控制與部署基礎設施，已明確納入課程 |
-| GitHub Copilot | 已隨 GitHub 帳號配套，明確保留 |
+| GitHub / GitHub Copilot | 版本控制與 AI 程式輔助（Copilot 隨 GitHub 帳號配套）。⚠ **GitHub Pages 部署已由 Big-Oh 取代**（見置頂決策） |
+| Big-Oh Hosting（部署 + 雲端 `BO`） | 自架部署站；CLI 一鍵部署、`window.BO` 提供存檔/排行/多人/帳號，**學生免帳號、免金鑰**（見置頂決策） |
 | Suno | 已明確保留 |
 | Canva（非 AI 排版功能） | 設計排版工具，非 AI 系統 |
-| Supabase（雲端資料庫） | 由老師/學校統一建立專案、提供 anon 公開金鑰，學生**不需註冊帳號**；anon 金鑰配合 RLS 可安全公開 |
+| ~~Supabase（雲端資料庫）~~ | **已作廢（2026-09）**：雲端改用 Big-Oh 的 `window.BO`（免金鑰、免 RLS、免註冊）；不再用 Supabase |
 
-### 雲端資料庫政策（2026-06 補充）
+### 雲端政策（2026-09 改版・取代 2026-06 的 Supabase 版）
 
-- **雲端資料庫採 Supabase**：由老師/學校統一建立專案，並把 **Project URL + anon（publishable）金鑰 + table 名稱**發給學生貼用，學生**不需註冊任何帳號**（符合本節核心原則）。
-- 老師須**開啟 RLS（Row Level Security）並設好政策**，確保 anon 金鑰可安全公開（包含日後部署到公開 repo）。**secret / service_role 金鑰絕不可給學生或放前端**。
-- **Firebase 不作為全班標準工具**：其帳號有年齡限制，小學生無法登入。例外：若個別學生已在家長協助下完成 Firebase 版本，可保留其**個人版本**並提供對應變體學習單，但全班標準雲端資料庫為 Supabase。
+- **雲端一律用 Big-Oh 平台自帶的 `window.BO`**（作品部署到 Big-Oh、L2 以上自動注入）：存檔 `BO.set/get`、排行 `BO.score/top`、計數 `BO.bump`、留言 `BO.post/list`、多人 `BO.room`、帳號 `BO.account`、匿名 `BO.visitor`。**免 import、免網址、免金鑰、免註冊**；錯誤訊息中文。
+- **學生不持有任何金鑰**（金鑰的事平台在後台處理掉了，符合本節核心原則）。作品內出現 `apiKey:`/`supabase`/`firebaseapp.com`/AWS/OpenAI 金鑰等會被平台**掃描退回**。
+- ~~Supabase（Project URL/anon 金鑰/RLS）~~、~~Firebase~~：**均作廢**——由 `BO` 取代。個別學生的舊 Firebase/Supabase 版本不再維護。
 
 ### 對現有內容的影響
 
@@ -582,6 +589,13 @@ W08 目前四個任務（A/B/C/D）設計為通用練習，需在下次修訂時
 ---
 
 ## 十六、部署政策【S7 為正式里程碑；可提前體驗】
+
+> ⚠️ **2026-09 改版：部署平台改為自架的 Big-Oh Hosting（取代本節下方的 GitHub Pages / Supabase / 自訂網域三層架構的「基礎層」與「進階層」）。**
+> - **部署**＝Big-Oh CLI：`curl` 抓 `bigoh.mjs` → `node bigoh.mjs login`（學生本人瀏覽器授權）→ `node bigoh.mjs deploy` → `https://<slug>.bigoh.uk`；免審核即時上線、重跑同 slug 更新、保留 3 版；配額每生 5 作品/每天 20 次/24MB。**取代 GitHub Pages**（不再用 `公司帳號.github.io`、Git push 部署、repo 公開那套）。
+> - **雲端/後端**＝平台 `window.BO`（見第十四節置頂決策），**取代 Supabase free tier「進階層」**。
+> - **廣告**：作品內**禁廣告碼**（平台自動退回、平台在外框處理廣告）；真的放廣告仍是**突破層**——未來由家長以成年帳號、在**家長自架的自訂網域**進行（本節下方「網路廣告政策」「家長協作 AdSense」的合規精神保留，但「把廣告碼放進學生作品/GitHub Pages」的做法作廢）。
+> - S7「拿到一個打得開的 URL」的里程碑精神不變，只是 URL 從 `github.io` 改為 `.bigoh.uk`，且因 Big-Oh 一鍵部署，S5 提前體驗更容易。
+> - 下方 GitHub Pages / Supabase / GitHub 帳號架構等段落為歷史脈絡，實作一律以本置頂決策與 `RULESFORAI.md`/`DEPLOYFORAI.md` 為準。
 
 ### 背景與設計原則
 
