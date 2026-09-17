@@ -24,20 +24,20 @@
 學期頁/週次任務
       │  worksheet-generator
       ▼
-   每週學習單  ──────────────┐
+   每週學習單
       │  labterminal-course-spec
-      ▼                      │
-Lab Terminal 互動課程開發文本   │
-      │  第六步呼叫            │
-      ▼                      ▼
- activity-time-estimator ← 驗證 7-screen / 學習單時長（50–65 分鐘）
-      │
+      ▼
+Lab Terminal 互動課程開發文本（7-screen）
+      │  第六步呼叫
+      ▼
+ activity-time-estimator
+      │  驗證時長（50–65 分鐘）
       ▼
    太長/太短判定 → 回頭調整內容
 ```
 
 - `labterminal-course-spec` 第六步會呼叫 `activity-time-estimator` 驗證時長，並把結果寫進規格後設資料。
-- 三者都讀 CLAUDE.md 為準；規則更新時 skill 自動跟著走（不複製條文）。
+- 這些 skill 都讀 CLAUDE.md 為準；規則更新時 skill 自動跟著走（不複製條文）。
 
 ---
 
@@ -65,4 +65,5 @@ Lab Terminal 互動課程開發文本   │
 
 ---
 
-> 最後修改：2026-06-24，原因：新增 LLM skill 索引頁，登錄 worksheet-generator / labterminal-course-spec / activity-time-estimator 及其串接關係
+> 最後修改：2026-09-09，原因：將地圖探索關卡的專用工具鏈與規格移至 `specs/lab-terminal-quest/`，本頁僅保留 wiki 內課程工具。
+> 建立：2026-06-24，原因：新增 LLM skill 索引頁，登錄 worksheet-generator / labterminal-course-spec / activity-time-estimator 及其串接關係
