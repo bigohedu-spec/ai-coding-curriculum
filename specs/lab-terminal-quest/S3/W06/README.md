@@ -1,6 +1,6 @@
 # S3 W06 Lab Terminal Quest｜異域探險：喚醒記憶（W01～W05 總複習）
 
-> 狀態：Runtime 已實作（`S3W06-VALLEY-REVIEW-20260924-r20-ghost-crossing-endless`）；課程 wiki（教案／學習單／課程規格）尚未同步，仍是舊版「太空基地」設計，待更新。
+> 狀態：Runtime 已實作（`S3W06-VALLEY-REVIEW-20260924-r20-ghost-crossing-endless`）；課程 wiki 已於 2026-09-29 同步：[課程規格](../../../../wiki/labterminal-specs/S3/S3-W06-課程規格-Lab-Terminal-Quest.md)、[教案](../../../../wiki/lesson-plans/S3/S3-W06-教案.md)、[學習單](../../../../wiki/worksheets/S3/S3-W06-學習單.md)。
 
 ## 1. 唯一來源與範圍
 

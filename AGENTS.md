@@ -18,3 +18,12 @@ When creating, rebuilding, or auditing a **map-exploration Lab Terminal Quest** 
 5. Keep world-level content (setting, villain, character sheets) in the arc-scoped `specs/lab-terminal-quest/S{N}/S{N}-世界觀規格-{劇本代號}.md` and week-level content in `specs/lab-terminal-quest/S{N}/W{NN}/`. A story arc spans roughly four weeks; switching arcs means a new file, never editing the old one in place. The owner decides arc boundaries — do not decide them yourself.
 
 Phaser is the default runtime for these levels as of 2026-09-09. Do not build new levels on the Gamma iframe route; the clauses it supersedes are listed in `specs/lab-terminal-quest/standards/lab-terminal-quest-phaser-runtime-standard.md` §0-1.
+
+When creating, building, or auditing a **Cocos web game** (Cocos Creator, 「Cocos 小遊戲」, 超休閒遊戲, or any game embedded in gpt-clone under `public/games/cocos/`), you must:
+
+1. Treat `specs/cocos-web-games/standards/cocos-web-game-standard.md` as the engineering authority (versions, folder layout, the `lt-game/1` host protocol, budgets, AI rules, acceptance checks K-1–K-10).
+2. Keep the boundary: Cocos owns the round, React owns everything else. The game never loads Firebase, calls `/api/*`, holds answer keys, persists progress, or shows a text-input box.
+3. Never hand-edit editor-managed files (`.scene`, `.prefab`, `.anim`, `.meta`). Change scenes only through the Cocos editor MCP or ask the owner; commit before and after MCP scene edits.
+4. Do not adjust game-feel numbers (speed, gravity, hitboxes, difficulty) on your own — propose them to the owner.
+
+This standard does not apply to map-exploration Lab Terminal Quest levels, which remain on Phaser until the owner rules otherwise.
