@@ -35,7 +35,11 @@
 
 ## 比較教學任務的特殊說明
 
-S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務，這些任務以**教學目的**使用 ChatGPT / Claude，屬例外，不適用工具替換規則。
+舊版 S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務、用真 ChatGPT／Claude 做比較教學。**這個例外已取消**（2026-08-20，CLAUDE.md 第八節、第十四節），上線內容也已換掉：
+
+- S2 模組二（W7–W12）現在是一個遊戲《逃離數碼界》六層（W07 十六個守衛、W08／W09 回聲書庫追問自學、W10–W12 三週小論文），**全程在 Lab Terminal 內完成**，後端路由真實模型，學生不需帳號、不進 ChatGPT／Claude 網站。
+- **目前六層都只用 GPT**。W07 的「比較兩個 AI」那一步要等後端補上 `ANTHROPIC_API_KEY` 才會出現。
+- 詳見 [[S2-小三下-AI探索]]。
 
 ---
 
@@ -46,6 +50,7 @@ S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務�
 | 2026-04-23 | 初始建立，依課綱 docx 整理 |
 | 2026-04-28 | 全面替換第三方 AI 工具：Canva AI → Lab Image；Adobe Firefly → Lab Image；Runway → Lab Video；Pika → Lab Video；新增工具政策說明（CLAUDE.md 第十四節） |
 | 2026-07-20 | S3 音樂工具改為 Lab Music；學生端不顯示 ElevenLabs，工程端由後端串 ElevenLabs Music API；S3-W01 文字類工具學生端名稱改為 Lab Terminal |
+| 2026-10-07 | 依 gpt-clone 上線內容對齊：S2 模組二（W7–W12）取消真 ChatGPT／Claude 比較例外，全程 Lab Terminal、目前只接 GPT（Claude 比較要等 `ANTHROPIC_API_KEY`） |
 
 ---
 
@@ -58,3 +63,4 @@ S2 模組二（W7–W9）保留「認識 Claude」與「雙 AI 比較」任務�
 ---
 
 > 最後修改：2026-07-20，原因：S3-W01 文字類工具學生端名稱改為 Lab Terminal；S3 音樂工具改為學生端 Lab Music，底層由後端串 ElevenLabs Music API
+> 最後修改：2026-10-07，原因：依 gpt-clone 上線內容對齊——「比較教學任務的特殊說明」改寫：S2 模組二已無真 ChatGPT／Claude 比較例外，《逃離數碼界》六層全程 Lab Terminal、目前只接 GPT；工具更新記錄補一列。
