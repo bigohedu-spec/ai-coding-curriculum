@@ -54,7 +54,7 @@
 | EX（Lab Image） | Lab Image | EX |
 | EX（VS Code） | VS Code + Copilot | EX |
 | EX（Lab Video/Suno） | 影片/音樂工具 | EX |
-| EX（ChatGPT/Claude 比較用） | ChatGPT + Claude | EX |
+| EX（ChatGPT/Claude 比較用，2026-08-20 已取消） | Lab Terminal（後端路由真模型，學生不需帳號；S2 模組二目前只接 GPT） | LT |
 
 ---
 
@@ -92,3 +92,4 @@
 ---
 
 > 最後修改：2026-04-23，原因：重新定義任務分類，從「平台位置」改為「任務內容」，新增 LT 類型
+> 最後修改：2026-10-07，原因：依 gpt-clone 上線內容對齊——分類對照表「ChatGPT/Claude 比較用」一列改為已取消：S2 模組二《逃離數碼界》全程在 Lab Terminal 內完成，歸 LT。
