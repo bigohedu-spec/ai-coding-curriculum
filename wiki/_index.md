@@ -67,7 +67,7 @@
 | [[feature-menu]] | 功能菜單：Web App 軌與遊戲軌的可選功能清單，學生從菜單選功能再用 Vibe Coding 實作 |
 | [[project-centric]] | 作品導向設計：S5 模組二起每個任務都是專案的一部分，學期末必有可上線版本 |
 | [[activity-time-model]] | 活動耗時估算模型：依年級把活動拆成動作估算秒數，判斷內容太長/太短（CLAUDE.md 第二十二節） |
-| [[llm-skills]] | LLM skill 索引：worksheet-generator / labterminal-course-spec / activity-time-estimator 的用途、位置與串接 |
+| [[llm-skills]] | LLM skill 索引：worksheet-generator / labterminal-course-spec / activity-time-estimator / lesson-entry-animation（進課動畫）的用途、位置與串接 |
 
 ---
 
@@ -108,6 +108,7 @@
 | 2026-06-24 | S2-W01 三件重寫為《阿問偵探社》偵探解謎 RPG（依 game-course-design 與交付成品回填）：時長靠深度（現場搜查/背景5選3/多層Q&A/大地圖/遇敵）非重複；本地判定+distractor（AI 只陪伴）；遊戲迴圈 v1；防硬A參數；角色跨頁一致。⚠️ 金幣 360（每案60×6）與 S2 現行 25 週經濟衝突，**待對齊決策** |
 | 2026-07-02 | P1U：刪 W02–W24 舊教案（重寫）；W01 回填為海底城版；W02 教案+互動設計規格（滑鼠強化+按錯懲罰+WASD）；[[P1U-王城故事線]]（巨型章魚軍團 5 關節奏戰鬥、每場景泡泡理解題防硬A、全注音） |
 | 2026-07-07 | 融入 P1U 低年級遊戲設計準則到 spec 流程：新增 `reference/low-grade-game-spec.md`（meta：內容/敘事/視覺寫死、難度/失敗/手感標假設待實玩校準、狀態/資料/容錯升一等公民）；修正 game-course-design「失敗非致命」→安全網分層(A保底寫死/B懲罰可調·失敗代價是旋鈕)+動作集封閉集合+難度量質雙線；spec-governance 加條款分級(規定/推定/假設)+資料工程一等公民+計分冪等vs重玩權拆開；王城戰鬥控制依 W01 成品修正為全滑鼠（攻擊右鍵/重擊左鍵×2/防禦左鍵/閃避左鍵拖曳），WASD 抽為獨立教學關 |
+| 2026-10-20 | 新增 `lesson-entry-animation` skill（`skills/lesson-entry-animation/`）：進課動畫量產製程、規則、範本、工具腳本與範例，登錄於 [[llm-skills]]，供其他人員生成進課動畫 |
 
 ---
 
