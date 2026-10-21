@@ -41,7 +41,7 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 | W7 | 專案方向確立，初始功能清單寫好 |
 | W9 | 至少兩個功能在瀏覽器上可以操作 |
 | W12 | 有 Welcome Page + 登入功能 + localStorage 持久化，多頁面可展示版本（MVP） |
-| W18 | 連接外部 API，或進一步擴充持久化功能（Firebase / Supabase） |
+| W18 | 用平台 `BO` 動態功能（排行榜/多人/留言）或進階雲端存檔擴充作品 |
 | W22 | 專案本地可完整執行，準備展示錄影 |
 | W24 | 學期結束，提交可展示的完整作品錄影 |
 
@@ -53,7 +53,7 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 |------|------|------|---------|
 | 模組一 | W1–W6 | Vibe Coding 工作室建立 | VS Code、Git、Copilot Chat 開通、第一次 Vibe Coding 體驗 |
 | 模組二 | W7–W12 | 專案啟動 + 核心功能堆疊 | 專案宣言、功能菜單選功能、用 Chat 描述 → 實作 → 測試迭代 |
-| 模組三 | W13–W18 | 進階功能 | 狀態持久化（localStorage）、外部 API 串接、進階功能（Firebase/Supabase 等，無上限） |
+| 模組三 | W13–W18 | 進階功能 | 狀態持久化（localStorage）、雲端存檔/排行/多人（平台 `BO`）、部署上線（Big-Oh），無上限 |
 | 模組四 | W19–W22 | 專案深化與完善 | 功能補強、視覺優化、本地展示版 |
 | 模組五 | W23–W24 | 學期收尾 | 作品錄影、說明文件、里程碑 |
 
@@ -124,16 +124,16 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 ### 模組三：進階功能（W13–W18）
 
 > 技術無上限——能做到什麼取決於學生的描述能力和迭代耐心。
-> localStorage、外部 API、Firebase、Supabase 都在選項範圍內。
+> localStorage（單機）、平台 `BO`（雲端存檔/排行/多人/留言，免金鑰）都在選項範圍內。
 
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
-| S5-W13-A | 雲端資料庫：用 Supabase 把資料寫上雲（老師統一提供金鑰） | EX | 150 | VS Code + Copilot Chat + Supabase |
-| S5-W13-B | 從雲端讀取顯示 + 跨裝置同步驗證 | EX | 100 | VS Code + Copilot Chat + Supabase |
-| S5-W14-A | 部署上線：用 Git 推上 GitHub Pages，拿到公開網址 | EX | 150 | VS Code + Git（CLI）+ GitHub Pages |
-| S5-W14-B | 認識網路廣告 + 寫未來廣告計畫（18+/家長框架） | EX | 100 | Lab Terminal |
+| S5-W13-A | 雲端存檔：用平台 `BO.set` 把資料寫上雲（免金鑰） | EX | 150 | VS Code + Copilot Chat + 平台 BO |
+| S5-W13-B | 用 `BO.get` 從雲端讀取顯示 + 跨裝置同步驗證 | EX | 100 | VS Code + Copilot Chat + 平台 BO |
+| S5-W14-A | 部署上線：用 Big-Oh CLI 部署，拿到 `.bigoh.uk` 公開網址 | EX | 150 | VS Code + Big-Oh CLI |
+| S5-W14-B | 認識網路廣告 + 寫未來廣告計畫（18+/家長框架、平台已處理廣告） | EX | 100 | Lab Terminal |
 | S5-W15-A | AI 對話閱讀理解：遊戲開發模擬器（Lab Terminal 互動課） | EX | 250 | Lab Terminal |
-| S5-W16-A | 進階功能一・外部 API 串接：串接免金鑰 API 並顯示 | EX | 150 | VS Code + Copilot Chat |
+| S5-W16-A | 進階功能一・讓作品有活資料：用平台 `BO` 動態功能（排行/計數/留言）並顯示 | EX | 150 | VS Code + Copilot Chat + 平台 BO |
 | S5-W16-B | 加一個使用者操作控制（按鈕/輸入觸發抓新資料） | EX | 100 | VS Code + Copilot Chat |
 | S5-W17-A | 進階功能二（自選） | EX | 250 | VS Code + Copilot Chat |
 | S5-W18-A | 進階功能里程碑：讓進階功能完整可用 | EX | 250 | VS Code + Copilot Chat |
@@ -160,5 +160,6 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 
 > 最後修改：2026-06-10，原因：模組三順序與工具調整。(1) **W13 改用 Supabase**（先前曾改為 Firebase，但 Firebase 帳號有年齡限制、小五學生無法登入而停用）——改為老師統一建立 Supabase 專案、提供 Project URL/anon 金鑰、設好 RLS，學生不註冊帳號（第十六節學校統管）。localStorage 持久化已於 W12 及前一週完成，故 W13 為雲端資料庫，依 Cascade 規則 5 重算金幣 A60/B40。(2) **W14 改為「網頁部署（GitHub Pages，CLI 優先）+ 網路廣告知識」**：上週已有學生成功部署，故把第十六節 S7 的部署概念提前到 S5；廣告依查證（AdSense 須滿 18 歲、未成年由家長申請）設計為概念+未來計畫，呼應 S8 獲利與家長框架。(3) 原 W14「外部 API」順延至 **W15**（與原 W15 顯示任務合併）；W16–18 進階功能順序不變
 
-> 最後修改：2026-05-13，原因：S5 全面改版為 Vibe Coding 工作流——核心哲學從「學習寫函式」轉為「PM 描述功能、Copilot Chat 實作、學生測試迭代」；模組二任務結構大幅重組；移除「寫函式」類型任務；加入功能菜單概�
+> 最後修改：2026-05-13，原因：S5 全面改版為 Vibe Coding 工作流——核心哲學從「學習寫函式」轉為「PM 描述功能、Copilot Chat 實作、學生測試迭代」；模組二任務結構大幅重組；移除「寫函式」類型任務；加入功能菜單概�
 > 最後修改：2026-07-15，原因：W15 改為《遊戲開發模擬器》(Lab Terminal 互動課，見 [[S5-W15-課程規格-G3]])；原「外部 API 串接」歸位到 **W16（進階功能一）**，拆 A150 串接顯示 / B100 加互動控制，建 [[S5-W16-教案]] 與 [[S5-W16-學習單]]；W17/W18 維持自選進階/里程碑。
+> 最後修改：2026-09-XX（部署平台改 Big-Oh），原因：**部署平台從 GitHub Pages＋Supabase/Firebase＋外部 API 全面改為自架的 Big-Oh Hosting**。(1) **部署**（W14）改為 Big-Oh CLI（`node bigoh.mjs deploy` → `.bigoh.uk`，免審核即時上線、CLI 優先）。(2) **雲端**（W13、模組三、W18 里程碑）改用平台自帶 `window.BO`（存檔 `BO.set/get`、排行 `BO.score/top`、多人 `BO.room`、留言 `BO.post/list`、帳號 `BO.account`）——免金鑰、免註冊、免外部網址；刪除 Firebase 版學習單。(3) **外部 API**（W16）因 Big-Oh 禁外部 fetch，改為「用 `BO` 做跨使用者的活資料」。(4) **廣告**（W14-B）改為媒體素養（作品內禁廣告碼、平台外框處理廣告、真放廣告是未來家長自架網域）。同步 CLAUDE.md 第十四/十六節。W12 里程碑仍為 localStorage 單機（不變）。
