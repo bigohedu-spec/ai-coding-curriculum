@@ -90,7 +90,7 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
 | S5-W01-A | VS Code 完整設定 | EX | 250 | VS Code |
-| S5-W02-A | 擴充套件安裝（含 Copilot） | EX | 250 | VS Code |
+| S5-W02-A | 擴充套件安裝（＋找到內建 Copilot） | EX | 250 | VS Code |
 | S5-W03-A | Git 初次使用 | EX | 250 | VS Code + Git |
 | S5-W04-A | 第一次 commit | EX | 250 | VS Code + Git |
 | S5-W05-A | Copilot Chat 開通 + 認識功能菜單 | EX | 250 | VS Code + Copilot |

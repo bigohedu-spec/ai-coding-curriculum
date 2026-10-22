@@ -17,7 +17,7 @@
 | **Lab Terminal（文字類）** | 輕量文字處理工具 | S3（W1） | 在 Lab Terminal 內處理整理、改寫、提示等文字任務；S3-W01 學生端名稱使用 Lab Terminal |
 | **Lab Image** | AI 圖像生成 | P1下（W19）/ S1（W11） | 取代 Canva AI、Adobe Firefly；文字→圖片，支援風格設定 |
 | **Lab Video** | AI 影片生成 | S3（W2） | 取代 Runway、Pika；圖片轉動畫、短影片生成 |
-| **Lab Music** | AI 音樂生成 | S3（W1 試用 / W3 正式） | 學生端音樂工具；底層由後端串 ElevenLabs Music API，學生不需帳號 |
+| **Lab Music** | AI 音樂生成 | S2（W13 起，模組三） | 學生端音樂工具，不需帳號。**S2 版**＝配樂工作室遊戲：MIDI 音源庫＋知道進度的 AI 小幫手（Jev 守門＋GPT 回答），不串 ElevenLabs；**S3 起**底層由後端串 ElevenLabs Music API |
 
 ---
 
@@ -64,3 +64,5 @@
 
 > 最後修改：2026-07-20，原因：S3-W01 文字類工具學生端名稱改為 Lab Terminal；S3 音樂工具改為學生端 Lab Music，底層由後端串 ElevenLabs Music API
 > 最後修改：2026-10-07，原因：依 gpt-clone 上線內容對齊——「比較教學任務的特殊說明」改寫：S2 模組二已無真 ChatGPT／Claude 比較例外，《逃離數碼界》六層全程 Lab Terminal、目前只接 GPT；工具更新記錄補一列。
+> 最後修改：2026-10-20，原因：Lab Music 第一次使用提前到 S2 W13（S2 模組三改教音樂）
+> 最後修改：2026-10-20，原因：Lab Music 的 S2 版改成 MIDI 音源庫＋AI 小幫手，ElevenLabs 從 S3 起
