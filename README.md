@@ -4,7 +4,7 @@
 
 ## 這個 repo 怎麼運作
 > 原則：**「Obsidian 是 IDE；LLM 是程式設計師；wiki 是程式碼。」**
-- **規則的唯一真相在 [`CLAUDE.md`](CLAUDE.md)**（Schema／二十多條課程設計規則／cascade 連動）。改任何內容前先讀它。
+- **規則的入口在 [`CLAUDE.md`](CLAUDE.md)**（Schema／頁面格式／cascade 連動／規則索引），細部設計規則在 [`rules/`](rules/)。改任何內容前先讀它。
 - **wiki 的入口在 [`wiki/_index.md`](wiki/_index.md)**（學期地圖、概念節點、最後更新記錄）。
 - 教材生產的可重用規則在 `skills/`（如 labterminal-course-spec 的設計準則）。
 
@@ -13,6 +13,7 @@
 程式教育課/
 ├── CLAUDE.md              ← 規則/Schema（唯一真相）
 ├── raw-sources/           ← 原始文件（唯讀）
+├── rules/                 ← 第十～二十二節設計規則（一節一檔，由 CLAUDE.md 規則索引導引）
 ├── wiki/                  ← 課程知識庫
 │   ├── _index.md          ← 入口
 │   ├── concepts/          ← 跨學期概念
