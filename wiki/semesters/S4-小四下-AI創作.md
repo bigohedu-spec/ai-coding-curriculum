@@ -1,6 +1,6 @@
 # S4｜小四下學期｜AI 創作
 
-> **⚠ 2026-10-28 Minecraft 退出課堂**：任務表中的 MC 任務（例：W06 邏輯塔第三關）是舊設計，**待重新設計**（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+> **⚠ 2026-10-28 Minecraft 退出課堂教學**：任務表中的 MC 任務（例：W06 邏輯塔第三關）是舊設計，**待重新設計**（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
 
 ## 學期概覽
 

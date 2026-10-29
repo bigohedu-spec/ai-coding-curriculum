@@ -1,6 +1,6 @@
 # S1 任務定義｜小三上學期
 
-> **⚠ 2026-10-28 Minecraft 退出課堂**：本頁的 MC 類任務定義（Minecraft 內截圖驗收等）已不適用於課堂，待重新設計；EX 類任務不受影響（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+> **⚠ 2026-10-28 Minecraft 退出課堂教學**：本頁的 MC 類任務定義（Minecraft 內截圖驗收等）已不適用於課堂，待重新設計；EX 類任務不受影響（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
 
 > 本文件為機器可讀格式，供自動化審核系統使用。
 > 所有任務已通過 CLAUDE.md 第十節的 Minecraft Vanilla 驗證。

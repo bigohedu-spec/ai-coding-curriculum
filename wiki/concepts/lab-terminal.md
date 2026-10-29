@@ -1,6 +1,6 @@
 # Lab Terminal｜雙平台遊戲學習系統
 
-> **⚠ 2026-10-28 Minecraft 退出課堂**：文中「與 Minecraft 共用點數」「完成 MC 任務」是舊設計；課後 Minecraft 與點數的關係尚未決定（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+> **⚠ 2026-10-28 Minecraft 退出課堂教學**：文中「與 Minecraft 共用點數」「完成 MC 任務」是舊設計；課後 Minecraft 與點數的關係尚未決定（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
 
 ## 定義
 

@@ -1,6 +1,6 @@
 # S1｜小三上學期｜AI 啟蒙
 
-> **⚠ 2026-10-28 Minecraft 退出課堂**：任務表中標為 MC／RT（Minecraft）的任務（W01-A/B、W05-B、W16、W19、W22 等）是舊設計，**待重新設計**；S1 正式站尚未上線（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+> **⚠ 2026-10-28 Minecraft 退出課堂教學**：任務表中標為 MC／RT（Minecraft）的任務（W01-A/B、W05-B、W16、W19、W22 等）是舊設計，**待重新設計**；S1 正式站尚未上線（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
 
 ## 學期概覽
 

@@ -115,7 +115,7 @@
 
 | 狀態 | 項目 |
 |------|------|
-| ✅ 已改 | 自由遊玩時間不再列 Minecraft：S2-W01、S3-W02、S3-W04、S5 W03／W07–W14 教案與學習單；S5 W01、W02 已拿掉 |
+| ➖ 保留 | 自由遊玩時間可玩 Minecraft（負責人 2026-10-29 更正：不以 Minecraft 教學，但自由時間仍可玩）；S2-W01、S3-W02、S3-W04、S5 W03／W07–W14 與 S5 W01–W02、S3 W05–W06 的自由時間欄都保留 Minecraft 選項 |
 | ✅ 已改 | 概念頁小句：ai-first、ai-tools、gamification-theory、task-types（MC 類型標停用）；S8 學期頁結語 |
 | ⚠ 加「待重新設計」橫幅，**內容未重寫** | S1-W01 教案／學習單／課程規格；S1-tasks、S1-quiz-bank、分班題庫；P1上、P2上、S1、S4 學期頁；task-schema、gamification-system、lab-terminal；MCS 生存入門 6 頁 |
 | ➖ 保留（歷史紀錄，不是現況） | S3 學期頁與 S3-W01 教案的「已移除 MC」紀錄（S3 早在 2026-07 已移除）；P1U-Arc3 的「取代 Minecraft」說明；_index 更新記錄 |

@@ -1,6 +1,6 @@
 # Task Schema｜任務格式規格
 
-> **⚠ 2026-10-28 Minecraft 退出課堂**：範例中的 MC 任務（截圖驗收、Minecraft 操作題）是舊設計，課堂不再使用；欄位格式本身仍可用於 EX 任務（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+> **⚠ 2026-10-28 Minecraft 退出課堂教學**：範例中的 MC 任務（截圖驗收、Minecraft 操作題）是舊設計，課堂不再使用；欄位格式本身仍可用於 EX 任務（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
 
 ## 為什麼需要固定格式
 
