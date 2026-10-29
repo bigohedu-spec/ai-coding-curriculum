@@ -233,7 +233,7 @@ ai-coding-curriculum/
 - 一般週次主線金幣為 250、ECT 在 50–65 分鐘
 - 與已上線成品一致（第四節 cascade 7）
 
-可用 skills 輔助：`skills/activity-time-estimator`（時長）、`skills/labterminal-course-spec`（互動課規格與成品驗證過的設計基準）、`skills/s3-answer-sheet-course`（S3 答題版）、`skills/cocos-web-game`（Cocos 小遊戲製作：建置、部署、編輯器 MCP、3D 模型、驗證）。
+可用 skills 輔助：`skills/activity-time-estimator`（時長）、`skills/labterminal-course-spec`（互動課規格與成品驗證過的設計基準）、`skills/s3-answer-sheet-course`（S3 答題版）、`skills/cocos-web-game`（Cocos 小遊戲製作：建置、部署、編輯器 MCP、3D 模型、驗證）、`skills/result-page`（成果頁：給家長看的 recap、作品頁、分享、驗證）。
 
 ---
 
