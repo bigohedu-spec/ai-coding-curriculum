@@ -1,5 +1,7 @@
 # Lab Terminal｜雙平台遊戲學習系統
 
+> **⚠ 2026-10-28 Minecraft 退出課堂**：文中「與 Minecraft 共用點數」「完成 MC 任務」是舊設計；課後 Minecraft 與點數的關係尚未決定（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+
 ## 定義
 
 Lab Terminal 不只是 AI 查詢工具，它是一個**獨立的遊戲學習平台**，與 Minecraft 平行運作，共用同一套點數經濟體系。學生可以把它理解為「另一個遊戲入口」——在這裡學習、玩遊戲、消費點數，和在 Minecraft 裡的體驗是互補而非取代關係。

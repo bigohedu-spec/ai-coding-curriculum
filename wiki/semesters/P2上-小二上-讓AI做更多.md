@@ -1,5 +1,7 @@
 # P2上｜小二上學期｜讓 AI 做更多
 
+> **⚠ 2026-10-28 Minecraft 退出課堂**：模組三「Minecraft 進階建造」（W13–W18，6 個 MC 任務）與其他 Minecraft 提及都是舊設計，**待重新設計**；P2上 正式站尚未上線（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+
 ## 學期概覽
 
 | 項目 | 內容 |

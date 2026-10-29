@@ -1,5 +1,7 @@
 # S1 Quiz 題庫｜小三上學期
 
+> **⚠ 2026-10-28 Minecraft 退出課堂**：本題庫含 Minecraft 操作題，這些題目不再對應課堂內容；改用於課後 Minecraft 複習的方式尚未定（見 CLAUDE.md 第十節「待負責人補充」）（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+
 > 本題庫供 Popup Quiz 系統使用。每道題標注解鎖條件（prerequisite_tasks），
 > 系統只在學生完成對應任務後才派發該題目。
 > 所有題目以繁體中文撰寫，語氣適合小學三年級學生。

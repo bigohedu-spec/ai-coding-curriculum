@@ -1,5 +1,7 @@
 # Gamification System｜遊戲化系統
 
+> **⚠ 2026-10-28 Minecraft 退出課堂**：文中「Minecraft 與 Lab Terminal 共用點數錢包」「Minecraft Popup Quiz」「MC 主線任務」是舊設計。課後 Minecraft 是否共用點數、Popup Quiz 是否保留，**尚未決定**（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+
 ## 定義
 
 這個課程的所有學習都圍繞一個**統一的點數經濟體**運作。Minecraft 和 Lab Terminal 是兩個遊戲入口，共用同一個點數錢包、同一套商店與 Gacha 系統。

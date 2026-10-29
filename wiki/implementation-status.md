@@ -109,6 +109,20 @@
 | 3D 列印工作坊 | — | `lesson-plans/extra/3D-print/`、`worksheets/extra/3D-print/` |
 | Minecraft 生存入門（MCS） | 課後自建伺服器，細節待定 | `lesson-plans/extra/minecraft-survival/`（6 頁），歸課後 |
 
+## Minecraft 清理進度（2026-10-28 起）
+
+規則見 CLAUDE.md 第十、十三節：Minecraft 退出課堂，只留課後自建伺服器題庫複習（細節待負責人定）。
+
+| 狀態 | 項目 |
+|------|------|
+| ✅ 已改 | 自由遊玩時間不再列 Minecraft：S2-W01、S3-W02、S3-W04、S5 W03／W07–W14 教案與學習單；S5 W01、W02 已拿掉 |
+| ✅ 已改 | 概念頁小句：ai-first、ai-tools、gamification-theory、task-types（MC 類型標停用）；S8 學期頁結語 |
+| ⚠ 加「待重新設計」橫幅，**內容未重寫** | S1-W01 教案／學習單／課程規格；S1-tasks、S1-quiz-bank、分班題庫；P1上、P2上、S1、S4 學期頁；task-schema、gamification-system、lab-terminal；MCS 生存入門 6 頁 |
+| ➖ 保留（歷史紀錄，不是現況） | S3 學期頁與 S3-W01 教案的「已移除 MC」紀錄（S3 早在 2026-07 已移除）；P1U-Arc3 的「取代 Minecraft」說明；_index 更新記錄 |
+| ➖ 保留（計時原語，工具通用） | activity-time-model 與 activity-time-estimator 的 mc_navigate／mc_action 動作；之後可標為歷史 |
+
+**要重新設計的內容（需要負責人決定怎麼取代）**：S1 的 MC 任務（W01 新手引導／我是誰、W05 每週探索、W16 第一棟房子、W19、W22）、P2上 模組三（6 個建造任務）、S4-W06 邏輯塔；S1 與 P2上 在正式站都還沒上線，所以不影響現行課程。
+
 ## 對照後要做的事（第 3 階段待辦）
 
 1. **補缺**：（P1U W13–W18、S5 W01–W02 已於 2026-10-28 補完）；正式站 S5 W01／W02 學習單仍寫 Minecraft 自由時間、缺本週學習重點，需回 gpt-clone 同步。

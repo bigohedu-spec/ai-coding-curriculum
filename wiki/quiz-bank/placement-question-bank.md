@@ -1,5 +1,7 @@
 # 分班題庫｜Stage 2 Placement Question Bank
 
+> **⚠ 2026-10-28 Minecraft 退出課堂**：分班題庫含「Minecraft 生存／紅石」直覺題，課堂不再教 Minecraft，這幾題需要重新檢視或替換（規則見 CLAUDE.md 第十、十三節；清理進度見 [[implementation-status]]）
+
 > 本題庫專供**新生分班考（Stage 2）**使用，與 quiz bank 不同。
 >
 > **設計原則**：所有題目不預設學生做過任何課程任務，
