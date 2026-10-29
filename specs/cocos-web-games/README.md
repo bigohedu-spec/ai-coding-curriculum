@@ -8,6 +8,7 @@
 | `<game-id>/`  | 各款遊戲的建置規格、玩法數值、QA 紀錄（開案時建立）              |
 
 正典：[`standards/cocos-web-game-standard.md`](standards/cocos-web-game-standard.md)（試點中）。
+製作方式（建置、部署、編輯器 MCP、3D 模型、踩坑、驗證）見 skill：`skills/cocos-web-game/`。
 
 ## 環境紀錄
 
