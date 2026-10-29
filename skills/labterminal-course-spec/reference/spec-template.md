@@ -47,7 +47,7 @@
 |------|-----|
 | 學期 / 週次 | S{N} / W{NN} |
 | 任務 ID | {ID} |
-| 任務類型 | {MC / EX / MS / TA} |
+| 任務類型 | {EX / MS / TA}（MC 已停用，課堂不再以 Minecraft 教學） |
 | 工具 | {Lab Terminal / Lab Image / VS Code…，僅限第十四節允許清單} |
 | 難度版本 | {G1–G2 | G3} |
 | 主線金幣 | 250（分配見 §2） |

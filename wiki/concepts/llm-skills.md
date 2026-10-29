@@ -37,6 +37,7 @@ Lab Terminal 互動課程開發文本   │
 ```
 
 - `labterminal-course-spec` 第六步會呼叫 `activity-time-estimator` 驗證時長，並把結果寫進規格後設資料。
+- `labterminal-course-spec` 的 `reference/` 在 2026-10-29 新增 `shipped-benchmarks.md`（S2／P1U 成品驗證過的設計基準：開場三頁範式、上線通則、互動與評量基準、注音）與 `motor-skill-lesson-design.md`（小一動作技能課）；`spec-governance.md` 新增「上線後回填 wiki 的對照流程」。`worksheet-generator.skill` 已移到 `archive/`（不再使用）。
 - 三者都讀 CLAUDE.md 為準；規則更新時 skill 自動跟著走（不複製條文）。
 
 ---
