@@ -61,7 +61,7 @@ curl 的做法：
 |------|------|--------------|
 | `execute_javascript`（多為 `editor`） | 約 85 | ① `Editor.Profile.getProject/setProject('engine','modules')` **做引擎功能裁剪**（關 3D／2D 物理、Spine、DragonBones、粒子、影片、WebView、TiledMap、地形、WebSocket；保留 3D、2D／UI、動畫、tween、音效），寫回後重讀確認；② `Editor.Message.request('scene','create-node'\|'set-property'\|'save-scene')` 建 Canvas＋Label（用 `db://internal/default_prefab/ui/Canvas\|Label.prefab` 的 uuid、`unlinkPrefab:true`）；③ `Editor.Message.request('asset-db','refresh-asset','db://assets/scripts')` **新增或修改 .ts 後由 MCP 觸發重新整理、產生 .meta**，再 `query-asset-info` 確認 `imported:true`；④ 建立／套用材質（unlit 頂點色、GPU instancing）；⑤ 指定注音字型；⑥ `Editor.Package.getPackages` 驗證載入路徑 |
 | `run_script_diagnostics` | 16 | 第一次回 88 個 TypeScript 錯誤，**全部來自引擎自己的型別宣告**（如 `@types/jsb.d.ts`）；改成只看檔案路徑含 `assets` → **專案自己 0 錯**。之後每次新增腳本都這樣篩 |
-| `create_scene` | 3 | `Main`（`mode:"current"`、`openAfterCreate:true`）、`BakeryW13`（掛 GameRoot）、`BakeryArcade` |
+| `create_scene` | 3 | 建立三個場景（先是當前場景，之後各掛主元件的兩個遊戲場景），`mode:"current"`、`openAfterCreate:true` |
 | `get_scene_info`／`get_hierarchy` | 3／1 | 確認場景節點、連線驗證 |
 | `capture_scene_screenshot` | 指令出現 4 次，只有第 1 次有看過內容細節 | 回傳 base64 PNG，解碼存暫存檔再讀圖確認 Label 出現 |
 

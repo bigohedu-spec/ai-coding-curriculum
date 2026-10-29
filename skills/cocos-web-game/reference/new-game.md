@@ -39,7 +39,7 @@
 2. 玩法腳本放 `assets/scripts/game/`，平台層放 `assets/scripts/platform/`。新增腳本後用 MCP `asset-db refresh-asset` 讓編輯器匯入並產生 `.meta`，一起 commit（A-4）。
 3. 遊戲開頭送 `ready`；收到 `config` 讀 `save`／`now`；收到 `start` 開局；進度有變送 `save`（每 10 秒最多 1 次，切到背景立刻送）；結束送 `complete`（每個 `sessionId` 只送一次）。
 4. 診斷：`run_script_diagnostics` 會回一堆引擎型別宣告的錯（88 個，與專案無關），**只看檔案路徑含 `assets` 的**。
-5. **數值集中**在一個設定檔（hc-pilot 的 `ArcadeConfig.ts`），註解寫負責人的調整理由與日期，沒實測的標【假設】。
+5. **數值集中**在一個設定檔（hc-pilot 就是這樣做），註解寫負責人的調整理由與日期，沒實測的標【假設】。
 
 ## 4. 建置、上網站、驗收
 
@@ -69,4 +69,4 @@
 - [ ] 上線五元素齊全（`worksheet-launch` skill）。
 - [ ] wiki：教案、學習單（含「本週學習重點」）、`implementation-status.md`、學程首頁都已更新（`labterminal-course-spec/reference/spec-governance.md` 的回填流程）。
 - [ ] 學生存檔與測試頁沒進 `public/`、`.vercelignore` 有涵蓋。
-- [ ] 原始碼已備份（目前 hc-pilot 沒有遠端；新專案請一開始就建私有 GitHub repo，並問負責人）。
+- [ ] 專案原始碼有備份（遠端 repo 或其他方式，由專案負責人決定）。

@@ -5,13 +5,14 @@
 
 ## 1. 自動化 harness（無頭 Chrome＋CDP）【實做】
 
-- 開 `http://localhost:3300/__test/`（hc-test-env），點學生按鈕載入存檔（呼叫頁面的 `load(idx)`），等 `built` 為真。
-- Chrome 用 `--headless=new --remote-debugging-port=<port>`，以 WebSocket 發 CDP 指令。`CDP_GPU=1` 用 d3d11 ANGLE（較快），否則 swiftshader；**不同腳本用不同 port**。量 fps 要 `--use-angle=d3d11 --enable-gpu` 才是真的顯卡數字。
-- 取遊戲物件（類別名被壓縮，所以用場景節點取）：
-  `document.querySelector('iframe').contentWindow.cc.director.getScene().getChildByName('GameRoot').getComponent('BakeryArcade')`
-- 操作：**真的鍵盤**（`Input.dispatchKeyEvent`，KeyW/A/S/D）、**真的滑鼠**（`Input.dispatchMouseEvent` 點螢幕座標，例如衣櫃卡片）；也可以直接呼叫 `g.jumpTo(週, 項, false)`、`g.teacherQuest()`、`g.snapshot()`。
-- 截圖：`Page.captureScreenshot`（可 `clip` 放大）。內建瀏覽器載入遊戲要 20～30 秒；要放大細節請用 CDP 的 `clip`＋`scale`，不要靠 `computer zoom`（有時不是目標畫面）。
-- 攔截技巧：包住 `g.fx`／`g.smoke` 記下每顆粒子的顏色與呼叫堆疊（證明腳步煙混色來自哪裡）；包住 `sfx.tone` 記下音符。
+> 腳本本身不在 repo（也不收進本 skill）；以下是**做法與要點**，要用請依此重寫。
+
+- **載入**：本機測試環境的測試頁（見 `workflow.md` §6）點學生按鈕載入存檔，等頁面回報建置完成。
+- **瀏覽器**：Chrome 用 `--headless=new --remote-debugging-port=<port>`，以 WebSocket 發 CDP 指令。`CDP_GPU=1` 之類的開關用 d3d11 ANGLE（較快），否則 swiftshader；**不同腳本用不同 port**。量 fps 要 `--use-angle=d3d11 --enable-gpu` 才是真的顯卡數字。
+- **取得遊戲物件**：類別名在建置後會被壓縮，所以不要靠類別名；從 iframe 的 `cc.director.getScene()` 找場景根節點，再取掛在上面的主元件。
+- **操作要用真的輸入**：鍵盤用 `Input.dispatchKeyEvent`、滑鼠用 `Input.dispatchMouseEvent` 點螢幕座標（例如點衣櫃卡片），證明真實操作路徑可用；需要快進時，才直接呼叫遊戲暴露的除錯入口（跳關、老師工具、取快照、結束加碼任務）。
+- **截圖**：`Page.captureScreenshot`，可用 `clip`＋`scale` 放大細節。內建瀏覽器載入遊戲要 20～30 秒；不要靠 `computer zoom`（有時不是目標畫面）。
+- **攔截技巧**：包住特效函式記下每顆粒子的顏色與呼叫堆疊，可以證明視覺問題（例如腳步煙混色）來自哪裡；包住音效函式記下音符。
 
 ## 2. 每次改動的固定回歸：「六位學生往前推演」【實做】
 
@@ -25,22 +26,22 @@
 週次開關看「上一週過關紀錄 `prog.weeks[週].day` 早於今天」。
 1. 在測試頁用 `window.addEventListener('message')` 攔下遊戲送的 `save` payload（測試頁本來就擋掉不寫回）。
 2. 把最後一週的 `day` 改成昨天、拿掉 `w5`／`w6`，push 進測試頁 `S` 陣列再 `load(i)`。全部只在瀏覽器記憶體。
-3. 任務表做完要等**加碼任務結束**（`wt.end`）才記過關；測試時呼叫 `g.endBonus()`。
+3. 任務表做完要等**加碼任務結束**（`wt.end`）才記過關；測試時呼叫遊戲暴露的「結束加碼任務」除錯入口。
 
 ## 4. 其他檢查入口【實做／記憶】
 
 | 參數／做法 | 用途 |
 |-----------|------|
-| `?dev=1` | 老師工具／跳關；整份標記 `dev`，**不拿來做學習分析**（`PlayStats`） |
+| `?dev=1` | 老師工具／跳關；整份標記 `dev`，**不拿來做學習分析** |
 | `?audit=1` | 版面檢測 |
 | `?lay=` | 版面比較 |
 | `?ph=u,v`／`?dh=u,v` | 調農夫的家 |
-| `?jump=W-N` | 跳到第 W 週第 N 項（hc-test-env） |
+| `?jump=W-N` | 跳到第 W 週第 N 項（本機測試環境） |
 | `?test=hidden17` 等 | 直接測隱藏任務 |
 
 ## 5. 數值要實算【實做】
 
-不靠感覺：例如「三明治客人比例改後，每位客人平均要幾個」，先用腳本模擬、再在遊戲內呼叫 `spawnShopper` 1000 次統計。經濟模擬：`scripts/econ-sim.mjs`（用比率算，不含走路距離／排隊／收錢時間，僅粗估）。
+不靠感覺：例如「某商品客人比例改後，每位客人平均要幾個」，先用腳本模擬，再在遊戲內讓生成函式跑 1000 次統計。經濟模擬可用簡單的比率腳本做粗估（不含走路距離、排隊、收錢時間，所以只是下限參考）。
 
 ## 6. 完成回報的寫法
 

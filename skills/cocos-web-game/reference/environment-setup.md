@@ -17,7 +17,7 @@
 
 | 項目 | 現況 | 備註 |
 |------|------|------|
-| **hc-pilot 原始碼** | 只在負責人的電腦 `C:\Dev\Cocos\Projects\hc-pilot`，**本機 git，沒有任何遠端**（2026-10-15 負責人選擇先不備份） | 新協作者**拿不到原始碼**，除非向負責人要整個資料夾（或請他先推到私有 GitHub repo）。這是最大的接手風險 |
+| 遊戲專案原始碼 | **本 skill 不收錄任何遊戲原始碼**；既有專案的資料夾由專案負責人提供 | 專案是獨立的本機 git repo，位置依第 3 節 |
 | 網站 repo | GitHub `hsinyuyen/gpt-clone`（PR 進 `main`） | 需要被加為協作者 |
 | 網站環境變數 | 本機 `.env.local`（OpenAI、Gemini、Firebase 等），Vercel 三個環境各一份 | 向負責人取得；**不要把任何金鑰寫進文件或 commit** |
 | Firebase 服務帳戶 | gpt-clone 根目錄的服務帳戶 JSON（指到 `FIREBASE_SERVICE_ACCOUNT`），只有撈存檔、跑 `check-lesson-package` 這類本機腳本才需要 | **唯讀使用**；本機腳本寫入就是寫正式站 |
@@ -50,7 +50,7 @@ C:\Dev\Cocos\                       ← <COCOS_ROOT>：不得放桌面或雲端�
 C:\Users\<你>\Desktop\CodingClass\
 ├─ gpt-clone\                       ← 網站 repo 主資料夾（常被別的 session 占用，別在這裡建置）
 ├─ gpt-clone-bakery\                ← 小熊麵包坊專用 worktree（分支 feat/hc-pilot-bakery）
-├─ hc-test-env\                     ← 學生存檔測試環境（不在任何 repo；含學生資料，絕不 commit）
+├─ <本機測試環境>                  ← 學生存檔測試環境（不在任何 repo；含學生資料，絕不 commit）
 └─ ai-coding-curriculum\            ← 課程 wiki／規格 repo
 ```
 
@@ -59,18 +59,18 @@ C:\Users\<你>\Desktop\CodingClass\
 - Cocos 專案**不得**放進 gpt-clone；gpt-clone 只收建置產物 `public/games/cocos/<game-id>/`。
 - `.gitignore` 至少忽略 `library/`、`temp/`、`local/`、`build/`、`node_modules/`；**不得**忽略 `settings/` 與任何 `.meta`。
 
-## 4. 架設步驟（接手既有專案 hc-pilot）
+## 4. 架設步驟（接手既有專案）
 
-1. 取得 hc-pilot 資料夾（見第 1 節）放到 `C:\Dev\Cocos\Projects\hc-pilot`，`git status` 確認是乾淨的 repo。
-2. 【GUI】安裝 Cocos Dashboard → 裝 Creator **3.8.8** → 從 Dashboard 開啟 hc-pilot（第一次開會產生 `library/`、`temp/`，需要幾分鐘）。
-3. 確認編輯器能開場景 `assets/scenes/BakeryArcade.scene`，預覽能玩。
+1. 拿到專案資料夾後放到 `C:DevCocosProjects<game-id>`，`git status` 確認是乾淨的 repo。
+2. 【GUI】安裝 Cocos Dashboard → 裝 Creator **3.8.8** → 從 Dashboard 開啟該專案（第一次開會產生 `library/`、`temp/`，需要幾分鐘）。
+3. 確認編輯器能開專案的主場景，預覽能玩。
 4. 網站端：`git clone` gpt-clone，建立 `.env.local`（向負責人取），`npm ci`，`npm run dev`（port 3000）。小熊麵包坊的工作請建 worktree：`git worktree add ..\gpt-clone-bakery feat/hc-pilot-bakery`（若已存在就直接用）。
 5. 試跑建置（編輯器**關著**）：
    ```powershell
    powershell -File C:\Dev\Cocos\Projects\hc-pilot\scripts\build-web.ps1 -GptClone <你的 gpt-clone 或 worktree 路徑>
    ```
    看到結束碼 36 與 `gzip` 那行才算成功；再用 `http://localhost:3000/games/cocos/hc-pilot/index.html` 與 `http://localhost:3000/play/hc-pilot`（要登入）確認。
-6. 建立測試環境 hc-test-env（`dump-saves.mjs` 需服務帳戶；`build.bat`、`start.bat`、`server.mjs`），細節見 `workflow.md` §6。**這個資料夾也不在 repo，需向負責人取得**。
+6. 建立本機測試環境（零件與做法見 `workflow.md` §6；需要服務帳戶才能撈存檔，**測試環境不在 repo，需自行建立或向負責人取得**）。
 7. 型別檢查：`gpt-clone\node_modules\.bin\tsc -p tsconfig.json --noEmit --skipLibCheck | grep "^assets/"`。
 
 ## 5. 編輯器 MCP 架設
@@ -88,9 +88,7 @@ C:\Users\<你>\Desktop\CodingClass\
 - [ ] 網站 `/play/<game-id>` 能登入、載入遊戲、存檔寫進 Firestore（用測試帳號，**別拿學生帳號**）。
 - [ ] `tsc` 對 `assets/` 無錯。
 - [ ] （若要用 MCP）`curl http://127.0.0.1:<port>/health` 有回應，`tools/call get_hierarchy` 能讀到節點。
-- [ ] 知道原始碼備份在哪（目前：只在這台電腦）。
 
 ## 8. 還沒有人走過的
 
 - 在**全新電腦**上完整照本檔架設一次——本檔是由現有環境與紀錄整理，沒有在乾淨環境驗證過【未驗證】。
-- 新協作者拿不到 hc-pilot 原始碼時的備案（私有 GitHub repo、壓縮備份）尚未決定。

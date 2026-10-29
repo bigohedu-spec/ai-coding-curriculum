@@ -2,20 +2,23 @@
 
 > 可信度標記見 `../SKILL.md`。本檔不重複正典 `cocos-web-game-standard.md` 的協定與目錄規定。
 
-## 1. 環境與位置【實做】
+## 1. 專案由哪些部分組成（以 hc-pilot 為例，只說角色，不含原始碼）【實做】
 
-| 項目 | 內容 |
+| 部分 | 角色 |
 |------|------|
-| 編輯器 | Cocos Creator **3.8.8**，`C:\ProgramData\cocos\editors\Creator\3.8.8\CocosCreator.exe`（Dashboard 預設路徑，偏離正典 §3，已核准） |
-| 專案 | `C:\Dev\Cocos\Projects\hc-pilot`（本機 git，**無遠端**；分支 master、feat/bgm-layers、feat/w16-cake…） |
-| 主程式 | `assets/scripts/game/BakeryArcade.ts`（約 1.4–1.8 萬行，單一元件） |
-| 數值單一真相 | `assets/scripts/game/ArcadeConfig.ts`（註解寫負責人的調整理由與日期） |
-| 其他腳本 | `SaveCheck.ts`（存檔檢查／白名單）、`AiMissions.ts`／`QuizData.ts`（問 AI 與小考）、`PlayStats.ts`（遊玩紀錄）、`BgMusic.ts`（配樂）、`ModelLib.ts`（模型載入） |
-| 平台層 | `assets/scripts/platform/LtBridge.ts`（postMessage 橋接）、`protocol.ts`（**自動產生，不要手改**） |
-| 3D 模型來源 | `_source/blender/*.py`（bpy 腳本產生低模，匯出 glb） |
-| 網站端 | `gpt-clone`：`public/games/cocos/hc-pilot/`（**只是建置產物**）、`src/pages/play/hc-pilot.tsx`（外層頁面）、`src/lib/hcPilotProgress.ts`、`src/lib/firestore.ts` |
-| 其他 | Node v24（LTS）、Blender 3.6、Cocos Dashboard 2.2.2.1515（winget `Cocos.CocosDashboard`） |
-| 對象 | P1 上（小一），一堂 35～40 分鐘（不是 gpt-clone CLAUDE.md 寫的三到六年級） |
+| 編輯器 | Cocos Creator 3.8.8（版本見 `environment-setup.md`） |
+| Cocos 專案 | 獨立 git repo，本機；一款遊戲一個專案 |
+| 主程式 | 一個單一元件掛在場景根節點，所有物件在這裡生成（行數很大，修改要用「舊字串必須恰好出現一次」的修補方式，見 `pitfalls.md` #19） |
+| 數值檔 | **所有手感與經濟數值集中在一個設定檔**，註解寫負責人的調整理由與日期；沒實測的標【假設】 |
+| 存檔檢查 | 讀檔時驗證欄位與值域（白名單）；新增欄位或擴大值域要同步改（#15） |
+| 問 AI／小考 | 題目與預寫回答的資料檔 |
+| 遊玩紀錄 | 有效遊玩時間（掛機、切走分頁不算）、每天一筆、里程碑花的時間、卡關次數；網址加 `?dev=1` 玩的整份標記排除 |
+| 配樂 | 配樂模組（與進課動畫共用同一套音樂搬運版時，改曲要通知對方） |
+| 模型載入 | 載入 glb 並在失敗時退回程式拼法 |
+| 平台層 | `LtBridge`（postMessage 橋接）與 `protocol`（**自動產生，不要手改**） |
+| 3D 模型來源 | 放在專案 `_source/` 的 Blender 腳本，用 bpy 產生低模再匯出 glb |
+| 網站端 | gpt-clone 的 `public/games/cocos/<game-id>/`（**只是建置產物**）與外層頁面（見 `website-integration.md`） |
+| 對象與節奏 | 依課程而定（hc-pilot：小一，一堂 35～40 分鐘；**不是** gpt-clone CLAUDE.md 寫的三到六年級） |
 
 ## 2. 專案設定【實做】
 
@@ -61,31 +64,31 @@ powershell -File C:\Dev\Cocos\Projects\hc-pilot\scripts\build-web.ps1 -GptClone 
 
 ## 5. 開下一週（不是複製專案）【記憶＋實做】
 
-- W13～W18 是**同一個專案**：週次靠存檔欄位（`questWeekShown`、`w3`＝買召喚台＝W15 開、`w4`＝買乳牛農場＝W16 開、`w5`／`w6`＝W17／W18、`prog.weeks`）與任務表（`quests()` 依週次回傳 `w13/w14/…` 陣列）。
-- **分界設計：金額鎖**。分界道具（召喚台、乳牛農場）出現時定成「今天一定賺不到」的價格，下一堂課的「回來獎勵」補到買得起；上週沒做完的學生判定為「補進度」，分界原價、不叫舉手。
-- **改任務表要同步**：`QUEST_VER`（存檔任務位置轉換）、`SaveCheck.ts` 的白名單、`WEEK_TASKS` 項數、隱藏任務期限 `ARCADE.hidden.due`。
-- **加新員工要成對改**：`BakeryArcade.ts`（型別、`hireWorker`、`pads`、`applyUnlock`、`load` 的 byKind、`openPanel`、`boardZoneOf`、`allWorkers`）＋ `SaveCheck.ts`（`PAD_ORDER`／`KINDS`／`STEPS`）＋ `QuizData.ts` ＋ 重跑注音字型。
-- 離線獎勵、金額鎖要等讀檔完成才算（週次、過關紀錄、`decoOwn` 都讀完）。
-- 分支：W16 之後在 hc-pilot `feat/w16-cake`；gpt-clone 端放 `gpt-clone-bakery` worktree（分支 `feat/hc-pilot-bakery`）。
+做法（hc-pilot 的設計，可套用在「同一款遊戲玩多週」）：
+- **同一個專案連做多週**，週次靠**存檔欄位**（目前週、各週過關紀錄、分界道具是否已買）與**任務表**（依週次回傳不同陣列）。
+- **用「金額鎖」切週次**：分界道具（例：召喚台、乳牛農場）出現時，價格定成「今天一定賺不到」的數字，下一堂課的「回來獎勵」補到買得起；上週沒做完的學生判定為「補進度」，分界按原價、不叫舉手。
+- **改任務表要同步**：存檔任務位置的版本轉換、存檔檢查的白名單、各週項數、隱藏任務期限。
+- **加新角色／員工要成對改**：遊戲主程式（型別、雇用、解鎖格、讀檔、面板、順序板、全體清單）＋存檔檢查（排序、種類、步驟）＋小考資料＋重跑注音字型。漏一處就會有「讀檔後某員工消失」或「白名單刪掉新值」。
+- 離線獎勵、金額鎖要等讀檔完成才算。
 - 改完遊戲，**同一個 commit 一併改 wiki 該週學習單與教案**（CLAUDE.md Cascade 規則 6／第二十三節），並更新 `wiki/implementation-status.md`。
 
-## 6. 本機測試環境 hc-test-env【實做＋記憶】
+## 6. 本機測試環境（做法）【實做＋記憶】
 
-位置：`C:\Users\COSH\Desktop\CodingClass\hc-test-env`（**不在任何 repo；`saves.json` 含學生資料，絕對不要 commit／放進 `public/`**）。
+目的：**用真實學生的存檔測遊戲，但絕不寫回、也不碰正式站**。這套東西放在 repo 之外（含學生資料）。需要有的零件：
 
-| 檔案 | 作用 |
-|------|------|
-| `dump-saves.mjs` | 用 firebase-admin（服務帳戶在 gpt-clone `.env.local`，**不要印出來**）**唯讀**撈 `gameProgress`，排除老師帳號 ruifei（uid 14775649…） |
-| `server.mjs` | 只綁 `127.0.0.1:3300`；`/__test/` 測試頁、`/__test/saves.json`；**只放行 GET/HEAD，其他一律 405**；遊戲檔優先從 `gpt-stub/public`（`build.bat` 建的）取，沒有才轉 gpt-clone dev server（3000） |
-| `index.html` | 上排每位學生一顆鈕；**收到遊戲的 `save` 訊息一律丟掉**並顯示「已擋下 N 次存檔」→ 測試不會覆蓋學生存檔；登入時間用「現在」，所以離線獎勵、金額鎖、補進度都照真的登入算 |
-| `build.bat` | 把 hc-pilot 目前工作區（含沒 commit）建到 `gpt-stub`，不碰 gpt-clone；**Cocos 編輯器要關著** |
-| `start.bat` | 重撈存檔 → 啟動伺服器 |
+| 零件 | 作用／要求 |
+|------|-----------|
+| 存檔撈取腳本 | 用 firebase-admin 以**唯讀**撈 `gameProgress`，排除老師帳號（ruifei，uid 14775649…）；服務帳戶在 gpt-clone `.env.local`，**不要印出來** |
+| 本機伺服器 | 只綁 `127.0.0.1`；`/__test/` 測試頁與存檔 json；**只放行 GET／HEAD，其他一律 405**；遊戲檔優先從獨立的 stub 資料夾取（自己建置的產物），沒有才轉給 gpt-clone dev server |
+| 測試頁 | 每位學生一顆按鈕載入其存檔；**收到遊戲的 `save` 訊息一律丟掉**並顯示「已擋下 N 次存檔」→ 測試絕不覆蓋學生存檔；登入時間用「現在」，所以離線獎勵、金額鎖、補進度都照真的登入算 |
+| 建置到 stub 的腳本 | 把遊戲目前工作區（含沒 commit）建到 stub，不碰 gpt-clone；**編輯器要關著** |
+| 啟動腳本 | 重撈存檔 → 啟動伺服器 |
 
-進階：測試頁有「跳到 W16/W17/W18 ▸ 第 N 項」與「額外網址參數」欄；用 `?jump=W-N`（N 為 1 起算的任務編號）。
+進階：測試頁提供「跳到第 N 週第 M 項」與額外網址參數；遊戲端要有對應的跳關入口（hc-pilot 內建跳關面板，僅 `?dev=1` 開啟）。**存檔檔含學生資料，絕對不要 commit、也不要放進 `public/`。**
 
 ## 7. 動工前 checklist
 
 1. 打開同系列上一週的成品，確認引擎、調色盤、chassis、章節結構 → **fork／延伸它**，不從頭寫。
 2. 確認負責人要的數值方向；沒實測的數值標「假設待實測」。
-3. 型別檢查 → 注音字型 → 建置（帶 `-GptClone`）→ grep 產物確認 → 用 hc-test-env 實測。
+3. 型別檢查 → 注音字型 → 建置（帶 `-GptClone`）→ grep 產物確認 → 用本機測試環境實測。
 4. 收尾：改 wiki 學習單／教案、更新 `implementation-status.md`、跑 LINT。
