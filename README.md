@@ -10,20 +10,22 @@
 
 ## 目錄結構
 ```
-程式教育課/
-├── CLAUDE.md              ← 規則/Schema（唯一真相）
+ai-coding-curriculum/
+├── CLAUDE.md              ← 規則入口／Schema
+├── rules/                 ← 第十～二十三節設計規則（一節一檔）
 ├── raw-sources/           ← 原始文件（唯讀）
-├── rules/                 ← 第十～二十二節設計規則（一節一檔，由 CLAUDE.md 規則索引導引）
-├── wiki/                  ← 課程知識庫
-│   ├── _index.md          ← 入口
-│   ├── concepts/          ← 跨學期概念
-│   ├── semesters/         ← 學期頁 P1–S8
-│   ├── lesson-plans/      ← 教案（含 extra/ 額外模組）
-│   ├── worksheets/        ← 學習單
-│   ├── labterminal-specs/ ← Lab Terminal 互動課/遊戲開發 spec
-│   ├── task-definitions/  ← 任務格式（自動審核用）
-│   └── quiz-bank/         ← 題庫
-└── skills/                ← 教材生產 skill 與設計準則
+├── skills/                ← 教材生產 skill 與設計準則
+├── specs/                 ← 跨課程規格（Cocos 網頁遊戲）
+├── archive/               ← 未使用的舊檔，僅供查閱
+└── wiki/                  ← 課程知識庫
+    ├── _index.md          ← 入口
+    ├── implementation-status.md ← wiki × 正式站對照
+    ├── programs/          ← 學程（P1U、S1、S2、S3、S5、extra）：首頁／教案／課程規格
+    ├── worksheets/        ← 學習單（路徑固定，gpt-clone 後台讀取）
+    ├── semesters/         ← 學期設計頁 P1–S8
+    ├── concepts/          ← 跨學期概念
+    ├── task-definitions/  ← 任務格式（自動審核用）
+    └── quiz-bank/         ← 題庫
 ```
 
 ## 團隊協作 / 版控

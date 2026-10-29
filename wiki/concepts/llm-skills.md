@@ -46,7 +46,7 @@ Lab Terminal 互動課程開發文本   │
 | 產物 | 位置 |
 |------|------|
 | 學習單 | `wiki/worksheets/S{N}/` |
-| 互動課程開發文本 | `wiki/labterminal-specs/S{N}/` |
+| 互動課程開發文本 | `wiki/programs/S{N}/課程規格/` |
 | 耗時估算 spec（暫存/附參） | 由使用者決定，通常隨課程規格附上 |
 
 ---

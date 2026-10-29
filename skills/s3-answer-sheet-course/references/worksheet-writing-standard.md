@@ -5,7 +5,7 @@ Use this reference whenever creating, revising, or auditing the student workshee
 ## Reference roles
 
 - W01-W04 remain useful for scaffold progression, tool flow, answer chains, and the gradual transfer of responsibility to students. Reuse effective wording, teaching devices, and content patterns selectively.
-- Use the **current** `wiki/lesson-plans/S3/_規劃稿/S3-W05舊規劃-天空要塞四需求-學習單.md`（2026-10-28 自 wiki/worksheets/S3/S3-W05-學習單.md 移入；正式站 W05 已改為 Phaser 關卡，此檔仍是 GAMMA 答題版的寫作基準） as the primary student-facing engineering benchmark. Re-read it rather than relying on a remembered revision.
+- Use the **current** `wiki/programs/S3/規劃稿/S3-W05舊規劃-天空要塞四需求-學習單.md`（2026-10-28 自 wiki/worksheets/S3/S3-W05-學習單.md 移入；正式站 W05 已改為 Phaser 關卡，此檔仍是 GAMMA 答題版的寫作基準） as the primary student-facing engineering benchmark. Re-read it rather than relying on a remembered revision.
 - W05 contributes two different things: a broadly reusable narrative standard and a conditional guided field-placement pattern. Do not confuse them.
 
 ## Plan the student action before the story

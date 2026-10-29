@@ -16,7 +16,7 @@
 - 複習題的題型，以及答對／答錯的回饋與獎勵（與課堂金幣、第二十一節的關係）
 - 課後 Minecraft 是否納入金幣、稱號等遊戲化進度
 - 課堂自由時間玩的 Minecraft，與課後自建伺服器是不是同一個、是否也有題庫複習
-- 既有 MCS 生存入門（`wiki/lesson-plans/extra/minecraft-survival/`）與 Mod 開發規格要不要併入課後伺服器
+- 既有 MCS 生存入門（`wiki/programs/extra/minecraft-survival/`）與 Mod 開發規格要不要併入課後伺服器
 - 自建伺服器能做到什麼（NPC、命名地點、自動觸發／驗收）：舊版 Vanilla 限制是否整條不再適用，待確認後再寫
 - 家長端說明（課後時間的使用方式、時間長短）
 

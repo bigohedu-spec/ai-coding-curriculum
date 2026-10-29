@@ -9,7 +9,7 @@ Produce a coherent three-file course bundle, not an isolated worksheet.
 
 ## Read first
 
-1. Read `wiki/labterminal-specs/S3/S3-答題版學習單新架構規格.md` completely. It is the architecture authority.
+1. Read `wiki/programs/S3/課程規格/S3-答題版學習單新架構規格.md` completely. It is the architecture authority.
 2. Read the target week in `wiki/semesters/S3-小四上-AI建構.md` and the previous week's worksheet, course spec, and lesson plan.
 3. Select exactly one scaffold profile: `onboarding`, `guided-chain`, `semi-open-chain`, or `autonomous-chain`.
 4. Read only the templates needed for the requested deliverables:
@@ -27,8 +27,8 @@ If the request is an audit only, do not edit files. Run the validator and report
 3. Design the question bank from a learning contract and cognitive-function matrix. Use short checks to focus the child on previous-current-next state and concept boundaries; do not compensate for a weak bank by adding procedural paragraphs to the worksheet.
 4. Create or update all three files unless the user explicitly narrows the deliverable:
    - `wiki/worksheets/S3/S3-WNN-學習單.md`
-   - `wiki/labterminal-specs/S3/S3-WNN-課程規格-G1-G2.md`
-   - `wiki/lesson-plans/S3/S3-WNN-教案.md`
+   - `wiki/programs/S3/課程規格/S3-WNN-課程規格-G1-G2.md`
+   - `wiki/programs/S3/教案/S3-WNN-教案.md`
 5. Lock worksheet H2 headings and `CONTENT_REVISION` before writing the config. Copy headings verbatim into `contentRef` and `nextContentRef`.
 6. Put the sole `LAB_TERMINAL_WORKSHEET_CONFIG` JSON block in the weekly course spec. New work uses schema v3 and declares `scaffoldProfile`.
 7. Keep hidden answer keys, `passContent`, validation terms, coins, and quiz answers out of the student worksheet. In a `guided-chain` match-and-copy task, canonical values explicitly authorized as student-visible source data by the weekly spec may appear; they are task input, not a leaked hidden key. Keep JSON out of the lesson plan.
@@ -38,8 +38,8 @@ If the request is an audit only, do not edit files. Run the validator and report
 ```powershell
 python skills/s3-answer-sheet-course/scripts/validate_s3_answer_course.py `
   wiki/worksheets/S3/S3-WNN-學習單.md `
-  wiki/labterminal-specs/S3/S3-WNN-課程規格-G1-G2.md `
-  --lesson-plan wiki/lesson-plans/S3/S3-WNN-教案.md
+  wiki/programs/S3/課程規格/S3-WNN-課程規格-G1-G2.md `
+  --lesson-plan wiki/programs/S3/教案/S3-WNN-教案.md
 ```
 
 Resolve every error. Review every warning and record why any warning remains.
@@ -61,7 +61,7 @@ Resolve every error. Review every warning and record why any warning remains.
 
 - The shared architecture governs bundle contracts; the target week's Semester entry and course spec govern the capability, assessment, and scaffold profile.
 - Keep W01-W04 as valid references for scaffold progression, answer chains, tool flow, explicit IDs, state, local validation, and answer isolation. Also reuse their effective task wording, teaching devices, or content patterns selectively; do not treat the four worksheets as wholly positive or wholly negative templates.
-- Use the current `wiki/lesson-plans/S3/_規劃稿/S3-W05舊規劃-天空要塞四需求-學習單.md`（2026-10-28 自 wiki/worksheets/S3/S3-W05-學習單.md 移入；正式站 W05 已改為 Phaser 關卡，此檔仍是 GAMMA 答題版的寫作基準） as the primary student-facing engineering benchmark. Its complete story, causal continuity, functional roles, concise visible prose, and explicit separation of story explanation from student operation apply broadly.
+- Use the current `wiki/programs/S3/規劃稿/S3-W05舊規劃-天空要塞四需求-學習單.md`（2026-10-28 自 wiki/worksheets/S3/S3-W05-學習單.md 移入；正式站 W05 已改為 Phaser 關卡，此檔仍是 GAMMA 答題版的寫作基準） as the primary student-facing engineering benchmark. Its complete story, causal continuity, functional roles, concise visible prose, and explicit separation of story explanation from student operation apply broadly.
 - W05's exact-label copy/paste pattern is conditional, not universal. Use it for `guided-chain` work whose assessed action is placing supplied content into named fields and assembling saved results. Do not use it when students are meant to infer, summarize, rewrite, or compose independently.
 - Reuse W05's engineering principles, not its plot, characters, field count, task labels, or exact section sequence. Never claim autonomous prompting when the worksheet supplies canonical values and copyable sentence frames.
 - `失敗結果：XXX` is a W05-specific device supported by its recurring character performing incomplete operations. It is not a required heading or default worksheet pattern. Use an explicit failure-result block only when the week's learning action genuinely depends on comparing a stable character's mistake with its consequence.

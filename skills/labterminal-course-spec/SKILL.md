@@ -9,7 +9,7 @@ description: |
 
 ## S3 GAMMA＋答題卡架構路由（優先於本檔其餘流程）
 
-若需求是 S3 的「答題版學習單／GAMMA＋右側答題卡／gamma-answer-worksheet」，不要套用本檔的 7-screen 單檔 HTML 骨架。改用專案內 `skills/s3-answer-sheet-course/SKILL.md`，並以 `wiki/labterminal-specs/S3/S3-答題版學習單新架構規格.md` 為共通正典。
+若需求是 S3 的「答題版學習單／GAMMA＋右側答題卡／gamma-answer-worksheet」，不要套用本檔的 7-screen 單檔 HTML 骨架。改用專案內 `skills/s3-answer-sheet-course/SKILL.md`，並以 `wiki/programs/S3/課程規格/S3-答題版學習單新架構規格.md` 為共通正典。
 
 該模式固定產出學生學習單、schema v3 課程規格與教案三文件；本檔後續的 7-screen、Rehearsal Modal、Icon 清單與單檔 HTML 規則只適用非 S3 答題版課程。
 
@@ -32,7 +32,7 @@ description: |
    - Icon 視覺規範（禁 emoji、AI 生圖、統一風格 prompt）
    - 也要看第十四節（工具政策：只用 Lab 系列）、第二十一節（每堂主線金幣固定 250）。
 2. **目標學習單**：`程式教育課/wiki/worksheets/S{N}/S{N}-W{NN}-學習單.md`（若使用者直接給了學習單內容或路徑，以該檔為準）。
-3. 對應教案（若存在）：`程式教育課/wiki/lesson-plans/S{N}/S{N}-W{NN}-教案.md` — 補充教學目標、成功條件、金幣。
+3. 對應教案（若存在）：`程式教育課/wiki/programs/S{N}/教案/S{N}-W{NN}-教案.md` — 補充教學目標、成功條件、金幣。
 4. 本 skill 的 `reference/spec-template.md` — 輸出模板（你要照它的結構填）。
 5. 本 skill 的 `reference/lesson-design-guide.md` — **開發團隊實戰設計指南（權威）**。凡「概念課／模擬器型」課程（帶學生走一條有產出的旅程，如遊戲開發模擬器），**一律遵循本指南的站結構與十大原則**。
 6. 本 skill 的 `reference/spec-governance.md` — **規格治理準則（權威，所有課程 spec 適用）**。避免「實作無聲偏離 spec」：正典/追溯、In/Out of Scope、跨週技能地圖、可數單位、互動詞彙表、防挫折 vs 反硬 A、認知/識字負荷、時長預算+實測校準、老師端+翻轉教育、跨切面需求、素材規格、DoD。**輸出的 spec 開頭必含 §G 治理區塊**。
@@ -158,7 +158,7 @@ description: |
 ## 輸出規格
 
 1. 檔名：`S{N}-W{NN}-課程規格-G{1-2|3}.md`，例：`S5-W09-課程規格-G3.md`。
-2. 位置：`程式教育課/wiki/labterminal-specs/S{N}/`（資料夾不存在就建立）。
+2. 位置：`程式教育課/wiki/programs/S{N}/課程規格/`（資料夾不存在就建立）。
 3. 檔頭加 `> 來源學習單：[[S{N}-W{NN}-學習單]]`、難度版本、生成日期。
 4. 檔尾加：`> 最後修改：YYYY-MM-DD，原因：由學習單生成 Lab Terminal 課程開發文本`。
 5. 在對應學習單底部（若可寫）補一條 `## 連結` 的 `[[S{N}-W{NN}-課程規格-G{1-2|3}]]` 回連（保持 wiki 雙向連結）。

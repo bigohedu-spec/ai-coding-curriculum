@@ -18,33 +18,40 @@ ai-coding-curriculum/
 ├── README.md、CONTRIBUTING.md   ← 簡介；分支／PR／commit 流程
 ├── RULESFORAI.md、DEPLOYFORAI.md ← Big-Oh Hosting 規範（部署與 window.BO）
 ├── raw-sources/             ← 原始文件，唯讀，不可修改
-├── rules/                   ← 第十～二十二節設計規則（一節一檔）；archive/ 放已作廢規則
+├── rules/                   ← 第十～二十三節設計規則（一節一檔）；archive/ 放已作廢規則
 ├── skills/                  ← 教材生產 skill（見第七節）
 ├── specs/                   ← 跨課程規格（如 cocos-web-games）
-├── docs/                    ← 補充文件
+├── archive/                 ← 未使用的舊檔（3D 列印 PDF、舊 docx、舊 spec 等），僅供查閱
 └── wiki/                    ← Claude 維護的知識庫
     ├── _index.md            ← 課程總覽入口
     ├── concepts/            ← 跨學期概念節點（16 頁）
     ├── semesters/           ← 學期頁：P1上／P1下／P2上／P2下、S1–S8（S4–S8 另有合併概覽）
-    ├── lesson-plans/        ← 教案與互動設計規格
-    │   ├── P1U/、S1/、S2/、S3/、S5/    ← 依系列分資料夾
-    │   └── extra/           ← 額外模組：3D-print、ai-picturebook、minecraft-survival
-    ├── worksheets/          ← 學習單（P1U、S1、S2、S3、S5、extra/3D-print）
-    ├── labterminal-specs/   ← Lab Terminal 互動課程／遊戲開發規格（S1、S2、S3、S5）
+    ├── implementation-status.md  ← wiki × 正式站對照、上線五元素實況
+    ├── programs/            ← 學程：每個系列一個資料夾
+    │   ├── P1U/、S1/、S2/、S3/、S5/
+    │   │   ├── [系列]-首頁.md ← 週索引：每週主題、教案、學習單、課程規格、正式站狀態
+    │   │   ├── 教案/        ← 教案
+    │   │   ├── 課程規格/    ← Lab Terminal 互動課程規格、遊戲設計規格（S3 含 ect/ 時間估算 json）
+    │   │   └── 規劃稿/      ← （只有 S3）已不是現況的舊規劃，保留參考
+    │   └── extra/           ← 額外模組：3D-print、ai-picturebook、minecraft-survival（教案與規格不分開）
+    ├── worksheets/          ← 學習單（P1U、S1、S2、S3、S5、extra/3D-print）；**路徑固定**，gpt-clone 後台 AI 出題讀這裡
     ├── task-definitions/    ← 任務格式（自動審核用）
     └── quiz-bank/           ← 題庫與分班題庫
 ```
 
 **系列代碼**：`P1U` 是小一的 Cocos 遊戲系列（Arc 制，如小熊麵包坊）；`P1上／P1下／P2上／P2下` 是 P 系列學期頁；`S1–S8` 是主線，每學期 24 週。
-**覆蓋狀況**不在這裡維護——以 `wiki/_index.md` 的學期地圖與各資料夾實際檔案為準。
+**覆蓋狀況**不在這裡維護——看各學程的 `[系列]-首頁.md`（週索引）與 `wiki/implementation-status.md`。
+
+> ⚠ **`wiki/worksheets/` 的路徑不能改**：gpt-clone 後台「AI 出題」（`src/lib/homeworkAdmin.ts`）與 S3 workflow 設定固定讀 `wiki/worksheets/**`。要搬學習單，必須同步改 gpt-clone。
 
 ### 檔名慣例
 
 | 類型 | 檔名 | 位置 |
 |------|------|------|
-| 教案 | `[系列]-W[兩位數週次]-教案.md` | `wiki/lesson-plans/[系列]/` |
+| 教案 | `[系列]-W[兩位數週次]-教案.md` | `wiki/programs/[系列]/教案/` |
 | 學習單 | `[系列]-W[兩位數週次]-學習單.md` | `wiki/worksheets/[系列]/` |
-| 互動課程規格 | `[系列]-W[週次]-課程規格*.md`、`*-互動設計規格.md` | `wiki/labterminal-specs/` 或 `lesson-plans/` |
+| 互動課程規格 | `[系列]-W[週次]-課程規格*.md`、`*-互動設計規格.md` | `wiki/programs/[系列]/課程規格/` |
+| 學程首頁 | `[系列]-首頁.md`（例 `S3-首頁.md`） | `wiki/programs/[系列]/` |
 | 學期頁 | `[學期代碼]-[年級學期]-[主題].md` | `wiki/semesters/` |
 | 概念頁 | 英文 kebab-case（`prompt-engineering.md`） | `wiki/concepts/` |
 
@@ -174,7 +181,7 @@ ai-coding-curriculum/
 
 > 已作廢的舊規則放 `rules/archive/`（目前：舊第十節 Vanilla MC 任務驗證）。第十八、十九、二十二節仍含舊 Minecraft 任務的 ECT 與範例，待第 3 階段清理，新寫內容不得照用。
 
-**S3 答題版例外**：`gamma-answer-worksheet`（S3 GAMMA＋答題卡）不套用第二十節的 7-screen 骨架，改依 `wiki/labterminal-specs/S3/S3-答題版學習單新架構規格.md` 與 `skills/s3-answer-sheet-course/SKILL.md`；細節見 `AGENTS.md`。
+**S3 答題版例外**：`gamma-answer-worksheet`（S3 GAMMA＋答題卡）不套用第二十節的 7-screen 骨架，改依 `wiki/programs/S3/課程規格/S3-答題版學習單新架構規格.md` 與 `skills/s3-answer-sheet-course/SKILL.md`；細節見 `AGENTS.md`。
 
 ---
 

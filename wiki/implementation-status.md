@@ -83,8 +83,8 @@
 | W02 | AI 編碼迷宮：馬雅星門 | ● | 學 教 規 | |
 | W03 | 午夜車站：零點列車 | ● | 學 教 規 | |
 | W04 | 顛倒博物館 | ● | 學 教 規 | |
-| W05 | 溪谷鎮的三需求咒語 | ● | 學 教 規 | 已於 2026-10-28 對齊（Release R20）；舊「天空要塞四需求」移到 `lesson-plans/S3/_規劃稿/`。「三需求」命名各站不統一，待確認 |
-| W06 | 異域探險：喚醒記憶（W02–W04 總複習＋紀念圖） | ● | 學 教 規 | 已於 2026-10-28 對齊（Release r20）；舊「太空基地五次建造測試」移到 `lesson-plans/S3/_規劃稿/`。正典說的是 W01–W05 總複習，但 r18 起實際是 W02–W04 三關＋終章 |
+| W05 | 溪谷鎮的三需求咒語 | ● | 學 教 規 | 已於 2026-10-28 對齊（Release R20）；舊「天空要塞四需求」移到 `programs/S3/規劃稿/`。「三需求」命名各站不統一，待確認 |
+| W06 | 異域探險：喚醒記憶（W02–W04 總複習＋紀念圖） | ● | 學 教 規 | 已於 2026-10-28 對齊（Release r20）；舊「太空基地五次建造測試」移到 `programs/S3/規劃稿/`。正典說的是 W01–W05 總複習，但 r18 起實際是 W02–W04 三關＋終章 |
 | W07 | — | — | 學 教 規 | wiki 已規劃，正式站未建 |
 | W08 | — | — | 學 | wiki 已規劃，正式站未建；為孤兒頁 |
 
@@ -112,9 +112,9 @@
 |------|--------|------|
 | S4、S6、S7、S8 | 尚未開始（無學習單） | 只有學期頁與 `S4-S8-概覽` |
 | P1上／P1下／P2上／P2下 學期頁 | 對應 P1U 系列的實作 | 學期頁含 MC 類任務，需改寫 |
-| AI 繪本示範課 | `public/courses/l1-character.html`～`l4-book.html`、`picturebook-gallery.html`、`/api/picturebook-story` | `lesson-plans/extra/ai-picturebook/`（8 頁） |
-| 3D 列印工作坊 | — | `lesson-plans/extra/3D-print/`、`worksheets/extra/3D-print/` |
-| Minecraft 生存入門（MCS） | 課後自建伺服器，細節待定 | `lesson-plans/extra/minecraft-survival/`（6 頁），歸課後 |
+| AI 繪本示範課 | `public/courses/l1-character.html`～`l4-book.html`、`picturebook-gallery.html`、`/api/picturebook-story` | `programs/extra/ai-picturebook/`（8 頁） |
+| 3D 列印工作坊 | — | `programs/extra/3D-print/`、`worksheets/extra/3D-print/` |
+| Minecraft 生存入門（MCS） | 課後自建伺服器，細節待定 | `programs/extra/minecraft-survival/`（6 頁），歸課後 |
 
 ## Minecraft 清理進度（2026-10-28 起）
 

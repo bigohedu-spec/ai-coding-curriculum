@@ -14,6 +14,20 @@
 
 ---
 
+## 學程首頁（週索引）
+
+每個系列的「每週教案／學習單／課程規格／正式站狀態」在各學程首頁：
+
+| 學程 | 首頁 |
+|------|------|
+| P1U 小一遊戲系列（W01–W18） | [[P1U-首頁]] |
+| S1 小三上 | [[S1-首頁]] |
+| S2 小三下 | [[S2-首頁]] |
+| S3 小四上 | [[S3-首頁]] |
+| S5 小五上 | [[S5-首頁]] |
+
+---
+
 ## 實作狀態
 
 哪一週正式站真的上線、wiki 有沒有跟上，看 [[implementation-status]]。與成品衝突時以成品為準。
@@ -48,9 +62,9 @@
 
 | 模組 | 內容 | 位置 |
 |------|------|------|
-| [[MCS-模組總覽]] | Minecraft 生存入門（採集合成 → 生存建築 → 座標導航 → 探險回家，4 堂）；解決「進 Minecraft 只待在家」 | `lesson-plans/extra/minecraft-survival/` |
-| 3D 列印工作坊 | AI 打字造句 × 3D 列印（W01–W06） | `lesson-plans/extra/3D-print/` |
-| [[AI繪本示範課-總覽]] | AI 協作＋AI 生圖做繪本（4 堂示範課，角色/風格統一，高/低雙難度） | `lesson-plans/extra/ai-picturebook/` |
+| [[MCS-模組總覽]] | Minecraft 生存入門（採集合成 → 生存建築 → 座標導航 → 探險回家，4 堂）；解決「進 Minecraft 只待在家」 | `programs/extra/minecraft-survival/` |
+| 3D 列印工作坊 | AI 打字造句 × 3D 列印（W01–W06） | `programs/extra/3D-print/` |
+| [[AI繪本示範課-總覽]] | AI 協作＋AI 生圖做繪本（4 堂示範課，角色/風格統一，高/低雙難度） | `programs/extra/ai-picturebook/` |
 
 ---
 
@@ -123,7 +137,7 @@
 | 2026-05-13 | S5 全面改版為 Vibe Coding 工作流（PM 描述 → Chat 實作 → 測試迭代）；新增 vibe-coding / feature-menu 概念節點；S5 技術天花板移除（localStorage/API/Firebase 皆可） |
 | 2026-06-24 | 新增動作級活動耗時估算模型（CLAUDE.md 第二十二節 + [[activity-time-model]]）與 `activity-time-estimator` skill；新增 `labterminal-course-spec` skill（學習單→Lab Terminal 互動課程開發文本）；新增 [[llm-skills]] 索引頁，登錄全部教材生產 skill 與串接 |
 | 2026-06-24 | 新增 [[activity-time-model]] 的 `motor_practice` 動作類型（初學者馬達技能）；P1U-W01 依此補足主線時長（滑鼠闖關 5 站 ≈ 54 分鐘） |
-| 2026-06-24 | 新增 S5-W15 Lab Terminal 互動課程開發規格「AI 對話閱讀理解：遊戲開發模擬器」（`labterminal-specs/S5/`，取代原 W15 外部 API 任務，學期頁待同步）；新增 Minecraft 生存入門額外模組（[[MCS-模組總覽]]，L01–L04 四堂教案） |
+| 2026-06-24 | 新增 S5-W15 Lab Terminal 互動課程開發規格「AI 對話閱讀理解：遊戲開發模擬器」（`programs/S5/課程規格/`，取代原 W15 外部 API 任務，學期頁待同步）；新增 Minecraft 生存入門額外模組（[[MCS-模組總覽]]，L01–L04 四堂教案） |
 | 2026-06-24 | 新增 [[MCS-Mod開發規格]]（Fabric mod，四堂 MC 生存任務全自動偵測、遊戲內引導與發獎，達成「老師不用引導」）；⚠️ 導入後需更新 CLAUDE.md 第十節驗收模型，新增 in_game 自動偵測層 |
 | 2026-06-24 | 併入開發團隊「教案設計指南」：labterminal-course-spec skill 新增 `reference/lesson-design-guide.md` 並更新 SKILL.md／spec-template（站結構「讀懂→理解題×2→填空→白話prompt(AI判讀)→決策→產物+預覽」、再說一次、誠實示意、折疊卡、總複習考試、金幣綁帳號）；S5-W15 spec 依此重構為 12 站+9 題考試（移除違反白話原則的「造句須含術語」），重估 57.4 分鐘 |
 | 2026-06-24 | S1-W01 全套更新：新增 [[S1-W01-課程規格-G1-G2]]（Lab Terminal 暖身互動課，~8 分鐘）；[[S1-W01-教案]] 更新至第十/十三/十九/二十二節（60+30 結構、ECT 53.7 分鐘、維持 90 點）；[[S1-W01-學習單]] 依第十九節重寫並移到正確路徑 `worksheets/S1/`（舊檔誤置於 `worksheets/S5/S1/`，已清理） |
