@@ -1,0 +1,19 @@
+{
+  "grade": 4,
+  "target_min": [50, 65],
+  "activities": [
+    { "label": "讀序章、四站委託、對白與結局", "action": "read", "chars": 1331, "instruction_chars": 25 },
+    { "label": "讀十二組 NPC 或葉片來源證據", "action": "read", "chars": 362, "instruction_chars": 25 },
+    { "label": "走訪四站與十二個資訊組", "action": "mc_navigate", "count": 16 },
+    { "label": "選自然提問與三次葉片圖比較", "action": "click", "count": 12 },
+    { "label": "讀四十八題確認題幹", "action": "read", "chars": 961, "instruction_chars": 25 },
+    { "label": "作答四十八題三選一", "action": "select", "option_chars": 41.875, "count": 48 },
+    { "label": "讀四十八題正確因果回饋", "action": "read", "chars": 1092, "instruction_chars": 25 },
+    { "label": "手動複製與貼入十二段規格證據", "action": "click", "count": 24 },
+    { "label": "四站組裝 Prompt、送出與確認", "action": "click", "count": 20 },
+    { "label": "等待四次 Lab Image 並觀察成果", "action": "think", "count": 4, "seconds": 150 },
+    { "label": "A 到 B 運菜林道路途事件", "action": "think", "count": 1, "seconds": 180 },
+    { "label": "B 葉片轉動、C Skill Check、D 燈台投擲", "action": "think", "count": 1, "seconds": 90 },
+    { "label": "四次教師附件驗收", "action": "teacher_confirm", "count": 4 }
+  ]
+}
