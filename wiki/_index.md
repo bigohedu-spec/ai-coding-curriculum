@@ -98,7 +98,7 @@
 | [[feature-menu]] | 功能菜單：Web App 軌與遊戲軌的可選功能清單，學生從菜單選功能再用 Vibe Coding 實作 |
 | [[project-centric]] | 作品導向設計：S5 模組二起每個任務都是專案的一部分，學期末必有可上線版本 |
 | [[activity-time-model]] | 活動耗時估算模型：依年級把活動拆成動作估算秒數，判斷內容太長/太短（CLAUDE.md 第二十二節） |
-| [[llm-skills]] | LLM skill 索引：worksheet-generator / labterminal-course-spec / activity-time-estimator 的用途、位置與串接 |
+| [[llm-skills]] | LLM skill 索引：worksheet-generator / labterminal-course-spec / activity-time-estimator / lesson-entry-animation（進課動畫）的用途、位置與串接 |
 
 ---
 
@@ -117,6 +117,7 @@
 
 | 日期 | 改動摘要 |
 |------|---------|
+| 2026-10-29 | S5 教材的 VS Code 介面名稱改成英文（學生的 VS Code 是英文版）：每份檔案第一次出現寫 `English（中文）`，之後只寫英文，選單路徑用箭頭（如 `File → Open Folder`、`Terminal → New Terminal`）；範圍為 [[S5-W03-學習單]]、[[S5-W03-教案]]、S5-W07～W14、W16、W17 學習單與 [[S5-W14-教案]]。Windows 檔案總管、Firebase、瀏覽器 Console、Lab Terminal 等非 VS Code 畫面不變 |
 | 2026-10-28 | wiki 大翻新（分支 wiki/revamp-2026-10-28）：CLAUDE.md 精簡、第十～二十二節拆到 `rules/`；Minecraft 退出課堂、只留課後自建伺服器題庫複習；新增 [[implementation-status]]（wiki × 正式站對照）。各週內容尚待第 3 階段逐週對齊 |
 | 2026-10-20 | [[S2-小三下-AI探索]] 模組三由「AI 生圖進階」改為「AI 音樂創作」（Lab Music，W13–W18，任務名稱暫定），模組四期末作品由繪本改為「有配樂的故事」，里程碑條件同步；原生圖進階移到 [[S4-小四下-AI創作]] 模組二（繪本）；S3 的音樂任務改為複習；cascade 到 gamification-system、learning-progression、ai-tools、placement-question-bank |
 | 2026-10-12 | P1U 模組三 W15「第 3 週：打倒巨型機器人」實作（hc-pilot ad86900）：新增 [[P1U-W15-學習單]]（學習重點：生產線）、[[P1U-Arc3-教案]] W15 任務表 12 項、開發規格 §3-17、學期頁 W15 任務名。問 AI「生產線是什麼」為草稿，待負責人審。 |
@@ -126,6 +127,9 @@
 | 2026-10-01 | P1U 模組三《小熊麵包坊》依遊戲現況對齊：[[P1U-Arc3-教案]] 改成每週一張任務表（W13「第 1 週：學會做三明治」16 項、實測約 45 分鐘；W14「第 2 週：三明治自動化」為假設；沒有「章」的設定），補上存檔與離線收入、小狐狸、開場動畫、任務表與箭頭、升級圈輪流、員工共用工具與拿滿規則、老師工具、遊玩紀錄；[[P1上-小一上-電腦初探]] 模組三說明與 W13–W18 任務名同步；新增 [[P1U-W13-學習單]]（W13–W18 唯一入口）；開發規格 `specs/cocos-web-games/p1u-arc3/` 依遊戲回填（§3-11～§3-14 任務表、存檔與離線收入、開場與老師工具、遊玩紀錄，§4 週次改寫）。 |
 | 2026-09-30 | 新增 [[S2-W10-學習單]]／[[S2-W11-學習單]]／[[S2-W12-學習單]]（逃離數碼界第四～六層＝三週小論文：研究→配圖小論文→配音影片）；S2 學期頁任務清單與 [[S2-模組二-AI研究所-開發規格]] 的 W10–W12 改成已上線設計，舊草圖標為已取代。 |
 | 2026-09-29 | 新增 `specs/cocos-web-games/`：負責人決定下一款網站超休閒遊戲改以 Cocos Creator 3.8.8 試點（Phaser 無視覺編輯器、開發成本高）。正典 [cocos-web-game-standard](../specs/cocos-web-games/standards/cocos-web-game-standard.md) 規定版本、目錄、網站串接協定 `lt-game/1`、流量預算、AI 協作規則與驗收 K-1～K-10；AGENTS.md 新增對應路由。地圖探索 Lab Terminal Quest 仍維持 Phaser。 |
+| 2026-09-29 | S3W06 教案／學習單／課程規格同步 Runtime r20「異域探險：喚醒記憶」（W01～W05 總複習）：舊版 G1–G2 太空基地規格改名並改寫為 [[S3-W06-課程規格-Lab-Terminal-Quest]]，學期總覽 W06 列與模組二說明同步更新。題目與答案仍只在 gpt-clone `s3w06W05Content.ts`。 |
+| 2026-09-28 | S3W06 工程交接文件從 gpt-clone 移入 `specs/lab-terminal-quest/S3/W06/handoff/`，新增 W06 規格索引 README（Runtime 已改為 W01～W05 溪谷鎮總複習）；S3W05 R4 舊交接移入 `S3/W05/handoff/` 存檔。W06 教案／學習單／課程規格尚未同步。 |
+| 2026-09-17 | S3W05 收束為 [[S3-W05-課程規格-Lab-Terminal-Quest]]：以 R20「失落規格的溪谷」為唯一課程版本；學生從自然 NPC 對話與固定圖像取得資訊，再手動組成 prompt，不採四格分類或固定句序。工程與題目正典集中於 `specs/lab-terminal-quest/` 和 Runtime 機讀資料。 |
 | 2026-07-29 | 修正 S3-W02 為「重點找出與提示詞生成」三題主題延續版：依使用者確認，W02 難度定義為中等，仍依賴 GAMMA 並沿用 W01 的左側 GAMMA 題目 + 右側 Lab Terminal 答題欄；題目架構固定為「題目資料」與「提示詞句子」。任務 1 翻譯外國化學家的英文求助，任務 2 根據露營車外觀生成尋車圖片，任務 3 找到露營車後生成車上播放的相識紀念音樂；學生需自行找重點、填完句子、直接複製到 Lab Terminal / Lab Image / Lab Music，再由 Lab 工具內生成前檢查後生成成果並送審；主線 250 金幣，activity-time-estimator 小四估時 57.5 分鐘。 |
 | 2026-07-27 | 依正確版 S3-W01 學習單對齊教案、Lab Terminal 課程規格與 S3 semester W1 定位：四題改為 3 點文字提醒、小狗玩球圖片、30 秒咖啡廳爵士樂、5 秒滑雪短影片；學生端每題提供可直接複製貼上的提示詞，流程維持「看任務 → 打開指定 Lab 工具 → 生成成果 → 回填 → AI 審核」，主線 250 金幣。 |
 | 2026-07-20 | 修訂 S3-W01「工具地圖探索」教案、學習單與 Lab Terminal 課程規格：核心口訣改為「先看任務是什麼，再用對的工具」；工具統一為 Lab Terminal / Lab Image / Lab Video / Lab Music；Lab Music 底層 API 選用 ElevenLabs Music；流程改為先試用四個工具，再處理分發任務；任務循環固定為「拿到任務 → 選擇工具 → 根據需求下提示詞 → 看結果 → 下一個任務」；prompt 審查為看結果前門檻；8 張分發任務，主線 250 金幣，ECT 59.3 分鐘。 |
@@ -148,8 +152,11 @@
 | 2026-06-24 | S2-W01 三件重寫為《阿問偵探社》偵探解謎 RPG（依 game-course-design 與交付成品回填）：時長靠深度（現場搜查/背景5選3/多層Q&A/大地圖/遇敵）非重複；本地判定+distractor（AI 只陪伴）；遊戲迴圈 v1；防硬A參數；角色跨頁一致。⚠️ 金幣 360（每案60×6）與 S2 現行 25 週經濟衝突，**待對齊決策** |
 | 2026-07-02 | P1U：刪 W02–W24 舊教案（重寫）；W01 回填為海底城版；W02 教案+互動設計規格（滑鼠強化+按錯懲罰+WASD）；[[P1U-王城故事線]]（巨型章魚軍團 5 關節奏戰鬥、每場景泡泡理解題防硬A、全注音） |
 | 2026-07-07 | 融入 P1U 低年級遊戲設計準則到 spec 流程：新增 `reference/low-grade-game-spec.md`（meta：內容/敘事/視覺寫死、難度/失敗/手感標假設待實玩校準、狀態/資料/容錯升一等公民）；修正 game-course-design「失敗非致命」→安全網分層(A保底寫死/B懲罰可調·失敗代價是旋鈕)+動作集封閉集合+難度量質雙線；spec-governance 加條款分級(規定/推定/假設)+資料工程一等公民+計分冪等vs重玩權拆開；王城戰鬥控制依 W01 成品修正為全滑鼠（攻擊右鍵/重擊左鍵×2/防禦左鍵/閃避左鍵拖曳），WASD 抽為獨立教學關 |
+| 2026-10-20 | 新增 `lesson-entry-animation` skill（`skills/lesson-entry-animation/`）：進課動畫製作流程、規則、範本與工具腳本，登錄於 [[llm-skills]]，供其他人員生成進課動畫 |
 
 ---
 
 > 最後修改：2026-10-07，原因：學習單每週學習重點規則；P1U 模組三《小熊麵包坊》依遊戲現況同步（見最後更新記錄）。
+> 最後修改：2026-10-01，原因：P1U 模組三《小熊麵包坊》依遊戲現況對齊（見最後更新記錄）。
+> 最後修改：2026-09-29，原因：新增 Cocos 網站小遊戲規格區 `specs/cocos-web-games/`。
 > 最後修改：2026-07-29，原因：再次修正 S3-W02；主線改為三個主題延續任務，任務 1 翻譯外國化學家求助，任務 2 根據露營車外觀生成尋車圖片，任務 3 找到露營車後生成相識紀念音樂。

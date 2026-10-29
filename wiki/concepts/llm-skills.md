@@ -13,6 +13,7 @@
 | `worksheet-generator` | 由學期/週次生成每週**學習單**（整合遊戲化、AI 優先、翻轉教育） | 已安裝（`worksheet-generator.skill`） | 全 CLAUDE.md，重點第十五、十七、十八、十九節 |
 | `labterminal-course-spec` | 以**學習單為藍本**，產出給工程 LLM 的 **Lab Terminal 互動課程開發文本**（7-screen 規格） | `skills/labterminal-course-spec/` | 重點第二十節（Web App 互動規範）、第十四節（工具政策） |
 | `activity-time-estimator` | **動作級耗時估算**：判斷教案/學習單/課程內容太長或太短 | `skills/activity-time-estimator/` | 第二十二節（[[activity-time-model]]）、第十八節 |
+| `lesson-entry-animation` | **進課動畫**量產：每堂課開始前播的網頁動畫（直接進主題→複習上週→故事與今天目標→課程重點→口訣→出發），含製程關卡、腳本範本、音樂主時鐘、P 系列動物語／S 系列語音生成配音、卡拉 OK 字幕、驗收清單與工具腳本 | `skills/lesson-entry-animation/`（安裝與工具放置見該資料夾 `README.md`） | 第二十三節（學習單「本週學習重點」）；動畫程式在 gpt-clone `src/components/lessonEntry/` |
 
 > 個人用途 skill（`bm-error-tracker`、`content`、`fitness-wiki` 等）與本課程無關，不列於此。
 
@@ -24,14 +25,14 @@
 學期頁/週次任務
       │  worksheet-generator
       ▼
-   每週學習單  ──────────────┐
+   每週學習單
       │  labterminal-course-spec
-      ▼                      │
-Lab Terminal 互動課程開發文本   │
-      │  第六步呼叫            │
-      ▼                      ▼
- activity-time-estimator ← 驗證 7-screen / 學習單時長（50–65 分鐘）
-      │
+      ▼
+Lab Terminal 互動課程開發文本（7-screen）
+      │  第六步呼叫
+      ▼
+ activity-time-estimator
+      │  驗證時長（50–65 分鐘）
       ▼
    太長/太短判定 → 回頭調整內容
 ```
@@ -40,7 +41,26 @@ Lab Terminal 互動課程開發文本   │
 - 2026-10-29 新增 `skills/result-page`（成果頁：形式與入口、資料與補齊規則、設計方法、改風格與驗證、踩坑）；資料來自負責小熊麵包坊 W18 成果頁的 session 交接，其他系列成果頁內容未逐頁驗證。
 - 2026-10-29 新增 `skills/cocos-web-game`（Cocos 網站小遊戲製作：流程、funplay-cocos-mcp 編輯器 MCP、3D 模型與渲染預算、踩坑、驗證）；資料來自負責 Cocos 的 session 交接與專案文件，MCP 端到端經驗尚缺。
 - `labterminal-course-spec` 的 `reference/` 在 2026-10-29 新增 `shipped-benchmarks.md`（S2／P1U 成品驗證過的設計基準：開場三頁範式、上線通則、互動與評量基準、注音）與 `motor-skill-lesson-design.md`（小一動作技能課）；`spec-governance.md` 新增「上線後回填 wiki 的對照流程」。`worksheet-generator.skill` 已移到 `archive/`（不再使用）。
-- 三者都讀 CLAUDE.md 為準；規則更新時 skill 自動跟著走（不複製條文）。
+- 這些 skill 都讀 CLAUDE.md 為準；規則更新時 skill 自動跟著走（不複製條文）。
+
+---
+
+### 進課動畫（獨立於上面的工具鏈）
+
+`lesson-entry-animation` 不在「學習單 → Lab Terminal」這條鏈上，而是**讀**本週學習單、教案與遊戲本體，產出 gpt-clone 裡的進課動畫：
+
+```
+本週學習單＋教案＋遊戲本體（S0 資料盤點）
+      │  lesson-entry-animation
+      ▼
+腳本（Gate A）→ 主題包（Gate K）→ 頁面 → 旁白＋字幕 → 配樂 → 自檢 → 負責人真實 Chrome 驗收（Gate G）
+      │
+      ▼
+gpt-clone /entry/play/<堂代號>；學生點學習單時經 /entry/go/<堂代號> 先播動畫再進教材
+```
+
+- 規則以 skill 內 `SKILL.md`「不可違反的規則」為準（都是負責人定案過的）；做之前先讀 `references/PITFALLS.md`。
+- 這裡是快照（2026-10-20）；負責人本機 `gpt-clone/.claude/skills/lesson-entry-animation/` 是活的版本，更新後要重新複製過來並在本頁記錄。
 
 ---
 
@@ -56,7 +76,7 @@ Lab Terminal 互動課程開發文本   │
 
 ## 安裝方式
 
-`skills/` 下的自訂 skill 需到「設定 → Capabilities」加入對應資料夾後才會在對話中觸發（與既有 `worksheet-generator` 相同）。
+`skills/` 下的自訂 skill 需到「設定 → Capabilities」加入對應資料夾後才會在對話中觸發（與既有 `worksheet-generator` 相同）。Claude Code／Codex 的安裝方式見各 skill 資料夾的 README（如 `skills/lesson-entry-animation/README.md`）。
 
 ---
 
@@ -68,4 +88,6 @@ Lab Terminal 互動課程開發文本   │
 
 ---
 
-> 最後修改：2026-06-24，原因：新增 LLM skill 索引頁，登錄 worksheet-generator / labterminal-course-spec / activity-time-estimator 及其串接關係
+> 最後修改：2026-10-20，原因：登錄 `lesson-entry-animation`（進課動畫量產）skill 與其流程
+> 最後修改：2026-09-09，原因：將地圖探索關卡的專用工具鏈與規格移至 `specs/lab-terminal-quest/`，本頁僅保留 wiki 內課程工具。
+> 建立：2026-06-24，原因：新增 LLM skill 索引頁，登錄 worksheet-generator / labterminal-course-spec / activity-time-estimator 及其串接關係
