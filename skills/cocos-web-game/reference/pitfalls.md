@@ -10,8 +10,8 @@
    為什麼：會讓建置的型別推論失敗、整個建置中止；`tsc` 也抓不到。現有程式裡 `this.follows`／`this.solids`／`this.floorBgs` 仍有此模式，目前沒爆但屬潛在風險【未驗證會不會爆】。
 3. **建置完別用 `Stop-Process CocosCreator` 全關**【記憶】。
    為什麼：負責人自己開著編輯器時會連他的編輯器一起關（`~/.CocosCreator/editor/window.json` 變 0 bytes 可能也是這個原因）。做法：建置前記下已存在的 PID，建置後只關新出現的、再 `taskkill /T` 建置用的 PowerShell；等 log 出現 `gzip` 行才清。
-4. **編輯器開著時建置會出現 `EPERM project.log`／`ENOTEMPTY`**【實做】。
-   為什麼：兩邊共用同一個專案與執行檔。`build.bat` 因此要求編輯器關著。
+4. **編輯器開著時建置會出現 `EPERM project.log`／`ENOTEMPTY`，結果不穩定**【實做】。
+   為什麼：兩邊共用同一個專案目錄（`temp/`）與執行檔。2026-09-29 開著編輯器建置，印了 EPERM 但**仍成功、產物有新程式碼**；2026-10-21 同類現象則造成失敗。最穩的做法是編輯器關著建置，`build.bat` 因此要求編輯器關著。**CLI 建置也算寫入**：同一時間只能一個 session 跑建置（CLI 會搶專案目錄，也會把別人匯入一半的模型打包進去）。
 5. **建置一定要帶 `-GptClone`**【實做】。
    為什麼：預設會把產物灌進 gpt-clone 主資料夾，弄髒別人的分支；小熊麵包坊一律灌 `gpt-clone-bakery`。
 6. **建置指令不要帶 `-ExecutionPolicy Bypass`**【記憶】。

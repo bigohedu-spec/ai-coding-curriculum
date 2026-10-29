@@ -37,5 +37,5 @@ description: |
 ## 範圍與已知缺口
 
 - 本 skill 以 **hc-pilot（P1U Arc 3）一款遊戲**的經驗為基礎；第二款 Cocos 遊戲開案時，要回頭檢查哪些是「這款特有」、哪些是通則。
-- **funplay-cocos-mcp 的端到端實戰紀錄不足**：安裝與設定已核對，但負責 Cocos 的 session 自己沒用它做過場景修改（見 `mcp-funplay-cocos.md` 的「可信度」）。
+- **funplay-cocos-mcp**：安裝、連線、約 85 次 `execute_javascript` 的實際用法都有紀錄（2026-09-29 開案那天）；缺的是 Claude Code **原生掛載** `.mcp.json`（當時是用 curl 呼叫）、`context:"scene"`、以及 9/30 之後有沒有人用它改場景（見 `mcp-funplay-cocos.md` §9）。
 - hc-pilot 原始碼**只在這台電腦、沒有 GitHub 遠端**（負責人 2026-10-15 選擇先不備份）。

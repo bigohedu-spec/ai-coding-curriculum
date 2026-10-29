@@ -42,7 +42,8 @@ powershell -File C:\Dev\Cocos\Projects\hc-pilot\scripts\build-web.ps1 -GptClone 
 - **不要帶 `-ExecutionPolicy Bypass`**（自動模式會擋；直接執行即可）。
 - 腳本流程：前置檢查 → `CocosCreator.exe --project <path> --build configPath=...`（`Start-Process -PassThru` 取結束碼，**不用 `-Wait`**，因為建置結束偶爾留孤兒子程序會卡住）→ **結束碼 36＝成功**（32 參數錯、34 建置期錯誤，其他一律中止、不複製）→ `robocopy /MIR build\web-mobile → <GptClone>\public\games\cocos\hc-pilot\` 並複製 `game.manifest.json` → 印產物大小與 gzip 估計（對照正典 §8 預算）。
 - **看到那行 `gzip` 才代表 robocopy 已完成**。
-- 改了 `.ts` 或新增素材，建置前要讓編輯器重新整理資產（可用 MCP 呼叫 `asset-db` 的 `refresh-asset`；見 `mcp-funplay-cocos.md`）。
+- 改了 `.ts` 或新增素材，建置前要讓編輯器重新整理資產（用 MCP 呼叫 `Editor.Message.request("asset-db","refresh-asset","db://assets/scripts")`；見 `mcp-funplay-cocos.md` §5）。
+- **同一時間只能一個 session 跑建置**，且先確認編輯器是否開著（開著可能成功也可能 `EPERM` 失敗）。
 
 **建完要驗證真的上線了**：grep `public/games/cocos/hc-pilot/assets/main/index.*.js` 看新程式碼在不在（檔名雜湊每次都變；曾有別的 session 反覆重建，拿到舊檔）。
 
