@@ -252,7 +252,7 @@ W4 要求學生記住：
 | S3-W05-A～D | 溪谷鎮的三需求咒語（Phaser《失落規格的溪谷》：河畔農場 A65、山腰工坊 B60、霧谷山徑 C60、古老遺跡 D65；每站補滿 Prompt 的三個空格後用 Lab Image 製作；主線 250；原「天空要塞四需求」未採用，見 `lesson-plans/S3/_規劃稿/`） | EX  | 250 | Phaser 關卡＋Lab Image |
 | S3-W06-B～E | 異域探險：喚醒記憶（W02–W04 總複習：星門遺跡 B65、午夜車站 C55、顛倒博物館 D55，終章溪谷鎮「我的 AI 冒險紀念圖」E75；主線 250；原「太空基地五次建造測試」未上線，見 `lesson-plans/S3/_規劃稿/`） | EX  | 250 | Phaser 關卡＋Lab Terminal＋Lab Image |
 | S3-W07-A | 語氣改寫任務單   | EX  | 250 | Lab Terminal        |
-| S3-W08-A | 好答案自我檢查   | EX  | 250 | Lab Terminal        |
+| S3-W08-A | 好答案自我檢查（題材與難度討論稿見 [[S3-W08-學習單]]；正式站尚未建） | EX  | 250 | Lab Terminal        |
 
 
 #### 模組二設計重點

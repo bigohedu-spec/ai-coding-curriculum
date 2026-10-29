@@ -2,7 +2,7 @@
 
 ## 定義
 
-把任何教學活動拆成「原子動作 × 年級」來估算所需秒數，用以**量化判斷教案 / 學習單 / Lab Terminal 互動課程的內容是太長還是太短**。這是 [[CLAUDE.md 第十八節 ECT]]（任務級、以分鐘、Copilot 取向）的細粒度補充，規則正式定義於 CLAUDE.md 第二十二節，計算引擎為 skill `activity-time-estimator`。
+把任何教學活動拆成「原子動作 × 年級」來估算所需秒數，用以**量化判斷教案 / 學習單 / Lab Terminal 互動課程的內容是太長還是太短**。這是 CLAUDE.md 第十八節 ECT（`rules/18-工作量ECT.md`）（任務級、以分鐘、Copilot 取向）的細粒度補充，規則正式定義於 CLAUDE.md 第二十二節，計算引擎為 skill `activity-time-estimator`。
 
 ---
 

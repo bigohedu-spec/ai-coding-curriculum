@@ -142,7 +142,7 @@ Vibe Coding：學生描述功能 → Copilot Chat 寫所有程式碼 → 學生�
 
 | 任務 ID | 名稱 | 類型 | 金幣 | 工具 |
 |---------|------|------|------|------|
-| S5-W19-A | 作品功能盤點：還缺什麼？ | EX | 250 | Lab Terminal |
+| S5-W19-A | 作品功能盤點：還缺什麼？（[[S5-W19-學習單]]） | EX | 250 | Lab Terminal |
 | S5-W20-A | 加入一個新功能 | EX | 250 | VS Code + Copilot Chat |
 | S5-W21-A | 作品視覺優化（讓 Chat 幫你改好看） | EX | 250 | VS Code + Copilot Chat |
 | S5-W22-A | 本地展示版 Demo 錄影 | EX | 250 | VS Code + 錄影工具 |
