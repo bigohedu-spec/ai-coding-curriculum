@@ -1,7 +1,7 @@
 ---
 name: cocos-web-game
 description: |
-  用 Cocos Creator 製作「嵌入 gpt-clone 網站的課程小遊戲」（例如 P1U 小熊麵包坊 hc-pilot）時的作法與知識：從零到上線的流程、建置與部署、與網站的存檔／完成鎖串接、本機測試環境、編輯器 MCP（funplay-cocos-mcp）怎麼用、3D 模型流程、踩過的坑、驗證方式。當使用者提到 Cocos、hc-pilot、小熊麵包坊、Cocos 建置、編輯器 MCP、要做新的 Cocos 週次或新遊戲，或要修改／測試／部署 Cocos 遊戲時使用。
+  用 Cocos Creator 製作「嵌入 gpt-clone 網站的課程小遊戲」（例如 P1U 小熊麵包坊 hc-pilot）的完整做法，**寫給之後接手的其他協作者**：開發環境該有什麼（軟體、版本、資料夾、權限）、怎麼開新一款遊戲、怎麼把遊戲掛進網站（外層頁面、lt-game/1 協定、存檔、完成紀錄、學習單、進課動畫、部署）、建置與測試環境、編輯器 MCP（funplay-cocos-mcp）、3D 模型流程、踩過的坑、驗證方式。當使用者提到 Cocos、hc-pilot、小熊麵包坊、Cocos 建置、編輯器 MCP、要接手或新做 Cocos 遊戲、要新增一週、要修改／測試／部署 Cocos 遊戲，或要把遊戲接上網站時使用。
 ---
 
 # Cocos 網站小遊戲製作
@@ -10,11 +10,21 @@ description: |
 > 資料來源：2026-10-29 向負責 Cocos 的 session（「Cocos 網站小遊戲環境初始化」）取得的製作交接，加上專案記憶檔、hc-pilot 的 `docs/3D模型-交接.md`、funplay-cocos-mcp 的官方文件，並對照實際檔案核對過。
 > 每條知識標了可信度：**【實做】**有人親手做過並驗證、**【記憶】**來自專案記憶（別的 session 做的）、**【文件】**來自官方／專案文件、**【未驗證】**沒確認。
 
+## 你是第一次接手？照這個順序
+
+1. 讀本檔「一定要守的規則」與「範圍與已知缺口」。
+2. `reference/environment-setup.md` — 先取得原始碼與權限、裝好軟體、跑通一次建置（**含一份環境驗收清單**）。
+3. `reference/website-integration.md` — 搞懂遊戲怎麼掛進網站、資料存哪裡、學習單怎麼建。
+4. 依你的工作往下選。
+
 ## 先讀什麼（依任務）
 
 | 任務 | 先讀 |
 |------|------|
-| 改遊戲、開新一週、建置、部署、接網站存檔 | `reference/workflow.md` |
+| 第一次接手：架環境、取得原始碼與權限 | `reference/environment-setup.md` |
+| 把遊戲接上網站（外層頁面、存檔、完成鍵、學習單、進課動畫、部署） | `reference/website-integration.md` |
+| **另開一款新遊戲** | `reference/new-game.md`（再配合上兩份） |
+| 改遊戲、開新一週、建置、部署 | `reference/workflow.md` |
 | 要讓 AI 透過編輯器改場景、截圖、診斷（編輯器 MCP） | `reference/mcp-funplay-cocos.md` |
 | 做／換 3D 模型、美術預算 | `reference/model-pipeline.md` |
 | 建置失敗、行為怪怪的、存檔壞掉 | `reference/pitfalls.md` |
